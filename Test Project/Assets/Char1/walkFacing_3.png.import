@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/walkFacing_1.png-65d0d70ca372cdebaea4ea9ee0598cb3.stex"
+path="res://.import/walkFacing_3.png-17400cfd698f2cda1b1f2614193f77a2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/chara_1/walkFacing_1.png"
-dest_files=[ "res://.import/walkFacing_1.png-65d0d70ca372cdebaea4ea9ee0598cb3.stex" ]
+source_file="res://Assets/Char1/walkFacing_3.png"
+dest_files=[ "res://.import/walkFacing_3.png-17400cfd698f2cda1b1f2614193f77a2.stex" ]
 
 [params]
 
