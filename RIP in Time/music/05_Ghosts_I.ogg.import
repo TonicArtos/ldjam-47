@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/05_Ghosts_I.ogg-902b52ba83fc27dbb82282b60b1b1c55.oggstr"
+
+[deps]
+
+source_file="res://music/05_Ghosts_I.ogg"
+dest_files=[ "res://.import/05_Ghosts_I.ogg-902b52ba83fc27dbb82282b60b1b1c55.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

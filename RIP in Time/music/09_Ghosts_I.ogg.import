@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/09_Ghosts_I.ogg-085fb92d1442311142c21303180d5df7.oggstr"
+
+[deps]
+
+source_file="res://music/09_Ghosts_I.ogg"
+dest_files=[ "res://.import/09_Ghosts_I.ogg-085fb92d1442311142c21303180d5df7.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
