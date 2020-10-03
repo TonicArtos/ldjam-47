@@ -6,6 +6,8 @@ var state: State
 var state_factory: PlayerStates
 
 var velocity = Vector2()
+var direction = State.RIGHT
+
 
 func _ready():
 	set_physics_process(true)

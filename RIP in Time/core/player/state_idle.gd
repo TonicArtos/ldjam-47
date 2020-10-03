@@ -4,7 +4,7 @@ class_name IdleState
 
 func _ready():
 	animated_sprite.play("idle")
-	persistent_state.velocity.x = 0
+	pstate.velocity.x = 0
 	get_node("../PlayerInput").connect("input_intent", self, "_handle_intent")
 
 func _exit_tree():
@@ -18,10 +18,14 @@ func _handle_intent(action):
 		move_left()
 
 func _physics_process(_delta):
-	persistent_state.velocity.x = 0
+	pstate.velocity.x = 0
 
 func _flip_direction():
 	animated_sprite.flip_h = not animated_sprite.flip_h
+	if animated_sprite.flip_h:
+		pstate.direction = State.LEFT
+	else:
+		pstate.direction = State.RIGHT
 
 func move_left():
 	if animated_sprite.flip_h:
@@ -36,3 +40,5 @@ func move_right():
 	else:
 		_flip_direction()
 		change_state("walk")
+
+

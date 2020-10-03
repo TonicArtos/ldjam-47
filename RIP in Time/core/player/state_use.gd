@@ -12,7 +12,7 @@ func _process(_delta):
 		move_right()
 
 func _physics_process(_delta):
-	persistent_state.velocity.x = 0
+	pstate.velocity.x = 0
 
 func _flip_direction():
 	animated_sprite.flip_h = not animated_sprite.flip_h
