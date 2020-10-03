@@ -19,10 +19,8 @@ func _handle_intent(action):
 		change_state("idle")
 	elif action == PlayerInput.Action.MOVE_FORWARD:
 		move_right()
-		print("forward")
 	elif action == PlayerInput.Action.MOVE_BACK:
 		move_left()
-		print("back")
 
 func _physics_process(_delta):
 	if abs(pstate.velocity.length()) < min_move_speed:

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rip_drive_terminal.png-c453ffbe090a5a30400d957dc2c5a922.stex"
+path="res://.import/v6.png-5662f7582efc7f867b8c474dbdf5ccc6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gfx/doodad/rip_drive_terminal.png"
-dest_files=[ "res://.import/rip_drive_terminal.png-c453ffbe090a5a30400d957dc2c5a922.stex" ]
+source_file="res://gfx/player/v6.png"
+dest_files=[ "res://.import/v6.png-5662f7582efc7f867b8c474dbdf5ccc6.stex" ]
 
 [params]
 

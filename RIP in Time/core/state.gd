@@ -13,10 +13,7 @@ func change_state(dest_state):
 	change_state_callback.call_func(dest_state)
 
 func _physics_process(delta):
-	var r := pstate.move_and_collide(pstate.direction.normalized() * pstate.velocity * delta)
-	if r != null:
-		print(r.travel, r.remainder)
-	#pstate.move_and_slide(pstate.velocity, Vector2.UP)
+	pstate.move_and_slide(pstate.direction.normalized() * pstate.velocity)
  
 func setup(change_state, animated_sprite, pstate):
 	self.change_state_callback = change_state
