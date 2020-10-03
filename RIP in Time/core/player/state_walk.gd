@@ -2,9 +2,9 @@ extends State
 
 class_name WalkState
 
-var move_speed = Vector2(360, 0)
+var move_speed = Vector2(10, 0)
 var min_move_speed = 0.005
-var friction = 0.32
+
 
 func _ready():
 	animated_sprite.play("walk")
@@ -25,16 +25,15 @@ func _process(_delta):
 func _physics_process(_delta):
 	if abs(persistent_state.velocity.length()) < min_move_speed:
 		 change_state("idle")
-	persistent_state.velocity.x *= friction
 
 func move_left():
 	if animated_sprite.flip_h:
-		persistent_state.velocity += move_speed
+		persistent_state.velocity.x = max(persistent_state.velocity.x, move_speed.x)
 	else:
 		change_state("idle")
 
 func move_right():
 	if not animated_sprite.flip_h:
-		persistent_state.velocity += move_speed
+		persistent_state.velocity.x = max(persistent_state.velocity.x, move_speed.x)
 	else:
 		change_state("idle")

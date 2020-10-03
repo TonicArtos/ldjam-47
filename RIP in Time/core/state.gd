@@ -10,7 +10,7 @@ func change_state(dest_state):
 	change_state_callback.call_func(dest_state)
 
 func _physics_process(_delta):
-	persistent_state.move_and_slide(persistent_state.velocity, Vector2.UP)
+	persistent_state.move_and_collide(persistent_state.velocity)
  
 func setup(change_state, animated_sprite, persistent_state):
 	self.change_state_callback = change_state
