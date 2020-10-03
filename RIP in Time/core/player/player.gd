@@ -5,6 +5,8 @@ class_name PlayerState
 var state: State
 var state_factory: PlayerStates
 
+var velocity = Vector2()
+
 func _ready():
 	state_factory = PlayerStates.new()
 	change_state("idle")

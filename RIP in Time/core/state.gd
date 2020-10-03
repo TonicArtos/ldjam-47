@@ -4,7 +4,7 @@ class_name State
 
 var change_state_callback
 var animated_sprite
-var persistent_state
+var persistent_state : KinematicBody2D
 
 func change_state(dest_state):
 	change_state_callback.call_func(dest_state)
