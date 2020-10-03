@@ -14,8 +14,9 @@ func _handle_intent(action):
 	if action == PlayerInput.Action.MOVE_FORWARD:
 		move_right()
 	elif action == PlayerInput.Action.MOVE_BACK:
-		print("back")
 		move_left()
+	elif action == PlayerInput.Action.USE:
+		perform_use()
 
 func _physics_process(_delta):
 	pstate.velocity.x = 0
@@ -41,4 +42,5 @@ func move_right():
 		_flip_direction()
 		change_state("walk")
 
-
+func perform_use():
+	emit_signal("interact")

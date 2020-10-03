@@ -9,6 +9,8 @@ var change_state_callback
 var animated_sprite
 var pstate : KinematicBody2D
 
+signal interact()
+
 func change_state(dest_state):
 	change_state_callback.call_func(dest_state)
 

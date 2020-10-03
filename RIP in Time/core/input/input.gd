@@ -33,7 +33,7 @@ func _pull_keys(chk_key_cb, looking_right) -> int:
 		keys |= Key.FORWARD if looking_right else Key.BACK
 	if chk_key_cb.call_func("ui_left"):
 		keys |= Key.BACK if looking_right else Key.FORWARD
-	if chk_key_cb.call_func("ui_use"):
+	if chk_key_cb.call_func("ui_up"):
 		keys |= Key.USE
 	return keys
 
