@@ -1,10 +1,16 @@
 # ldjam-47
 
-* Have fun
-* Panic
+*Theme*: **Stuck in a loop**
+
+This is our workspace for our entry into Ludum Dare Game Jam 47.
+
+## Tools
+
+*Game engine*: Godot
 
 
-Cool.
+## Team Members
 
-So very cool.
-
+ - Wavicle
+ - Keibii
+ - Tonic
