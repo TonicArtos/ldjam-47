@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://gfx/doodad/rip_drive/rip_drive_terminal.png" type="Texture" id=1]
 [ext_resource path="res://gfx/doodad/rip_drive/rip_drive_body.png" type="Texture" id=2]
+[ext_resource path="res://core/doodad/rip_drive/rip_drive.gd" type="Script" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -64,8 +65,9 @@ position = Vector2( 0, -16 )
 frames = SubResource( 6 )
 animation = "idle"
 
-[node name="Area2D" type="Area2D" parent="RipDriveTerminal"]
+[node name="Interactable" type="Area2D" parent="RipDriveTerminal"]
 scale = Vector2( 10, 10 )
+script = ExtResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RipDriveTerminal/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RipDriveTerminal/Interactable"]
 shape = SubResource( 7 )

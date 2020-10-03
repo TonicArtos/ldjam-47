@@ -4,7 +4,7 @@
 [ext_resource path="res://gfx/player/v6.png" type="Texture" id=2]
 [ext_resource path="res://core/input/input.gd" type="Script" id=4]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
@@ -22,7 +22,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 16, 32 )
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -32,14 +32,14 @@ extents = Vector2( 16, 32 )
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "idle"
 
 [node name="PlayerInput" type="Node2D" parent="."]
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="InteractArea" type="Area2D" parent="."]
 
