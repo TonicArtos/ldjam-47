@@ -34,7 +34,7 @@ shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-animation = "use"
+animation = "idle"
 
 [node name="PlayerInput" type="Node2D" parent="."]
 script = ExtResource( 4 )
