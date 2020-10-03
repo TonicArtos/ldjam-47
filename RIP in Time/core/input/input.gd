@@ -2,22 +2,28 @@ extends Node2D
 
 class_name PlayerInput
 
-var token : Token
+signal input_intent(action)
+
 var current_direction = LookDirection.RIGHT
+
+var is_action_just_released_ref := funcref(Input, "is_action_just_released")
+var is_action_just_pressed_ref := funcref(Input, "is_action_just_pressed")
+var is_action_pressed_ref := funcref(Input, "is_action_pressed")
 
 func _process(delta):
 	pass
 	
 func _physics_process(delta):
-	var token := _get_input_bits()
+	var token = _get_input_bits()
+	emit_signal("input_intent", token.action)
 
 func _get_input_bits() -> Token:
 	var keys: int = 0
 	var looking_right = current_direction == LookDirection.RIGHT
 	var token = Token.new(
-		_pull_keys(funcref(Input, "is_action_just_released"), looking_right),
-		_pull_keys(funcref(Input, "is_action_just_pressed"), looking_right),
-		_pull_keys(funcref(Input, "is_action_pressed"), looking_right)
+		_pull_keys(is_action_just_released_ref, looking_right),
+		_pull_keys(is_action_just_pressed_ref, looking_right),
+		_pull_keys(is_action_pressed_ref, looking_right)
 	)
 	return token
 
@@ -39,22 +45,23 @@ class Token:
 		if actual_keys & Key.USE == Key.USE:
 			action = Action.USE
 		elif actual_keys & DOUBLE_PRESS == DOUBLE_PRESS:
-			action = null
+			action = Action.NONE
 		elif actual_keys & Key.FORWARD == Key.FORWARD:
 			action = Action.MOVE_FORWARD
 		elif actual_keys & Key.BACK == Key.BACK:
 			action = Action.MOVE_BACK
 		else:
-			action = null
+			action = Action.NONE
 		
 		
 	func result():
 		pass
 
 enum Action {
-	MOVE_BACK,
-	MOVE_FORWARD,
-	USE,
+	NONE = 0,
+	MOVE_BACK = 1,
+	MOVE_FORWARD = 2,
+	USE = 3,
 }
 
 enum LookDirection {

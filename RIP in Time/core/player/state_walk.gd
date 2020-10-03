@@ -11,16 +11,20 @@ func _ready():
 	if animated_sprite.flip_h:
 		move_speed.x *= -1
 	persistent_state.velocity += move_speed
-
-func _process(_delta):
-	if Input.is_action_just_released("ui_left"):
+	get_node("../PlayerInput").connect("input_intent", self, "_handle_intent")
+	
+func _exit_tree():
+	get_node("../PlayerInput").disconnect("input_intent", self, "_handle_intent")
+	
+func _handle_intent(action):
+	if action == PlayerInput.Action.NONE:
 		change_state("idle")
-	elif Input.is_action_just_released("ui_right"):
-		change_state("idle")
-	elif Input.is_action_pressed("ui_left"):
-		move_left()
-	elif Input.is_action_pressed("ui_right"):
+	elif action == PlayerInput.Action.MOVE_FORWARD:
 		move_right()
+		print("forward")
+	elif action == PlayerInput.Action.MOVE_BACK:
+		move_left()
+		print("back")
 
 func _physics_process(_delta):
 	if abs(persistent_state.velocity.length()) < min_move_speed:
@@ -28,7 +32,7 @@ func _physics_process(_delta):
 
 func move_left():
 	if animated_sprite.flip_h:
-		persistent_state.velocity.x = max(persistent_state.velocity.x, move_speed.x)
+		persistent_state.velocity.x = min(persistent_state.velocity.x, move_speed.x)
 	else:
 		change_state("idle")
 

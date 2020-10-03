@@ -5,12 +5,17 @@ class_name IdleState
 func _ready():
 	animated_sprite.play("idle")
 	persistent_state.velocity.x = 0
+	get_node("../PlayerInput").connect("input_intent", self, "_handle_intent")
 
-func _process(_delta):
-	if Input.is_action_just_pressed("ui_left"):
-		move_left()
-	elif Input.is_action_just_pressed("ui_right"):
+func _exit_tree():
+	get_node("../PlayerInput").disconnect("input_intent", self, "_handle_intent")
+
+func _handle_intent(action):
+	if action == PlayerInput.Action.MOVE_FORWARD:
 		move_right()
+	elif action == PlayerInput.Action.MOVE_BACK:
+		print("back")
+		move_left()
 
 func _physics_process(_delta):
 	persistent_state.velocity.x = 0
