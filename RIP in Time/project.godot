@@ -39,11 +39,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://core/player/state_intro.gd"
 }, {
-"base": "Reference",
-"class": "KeyFobItem",
-"language": "GDScript",
-"path": "res://core/item/key_fob_item.gd"
-}, {
 "base": "HBoxContainer",
 "class": "MenuEntry",
 "language": "GDScript",
@@ -101,7 +96,6 @@ _global_script_class_icons={
 "FpsPrinter": "",
 "IdleState": "",
 "IntroState": "",
-"KeyFobItem": "",
 "MenuEntry": "",
 "PlayerInput": "",
 "PlayerState": "",

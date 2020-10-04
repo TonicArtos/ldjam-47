@@ -2,12 +2,11 @@ extends State
 
 class_name WalkState
 
-var move_speed = Vector2(60, 0)
+var move_speed = Vector2(90, 0)
 var min_move_speed = 0.005
 
 
 func _ready():
-	animated_sprite.play("walk")
 	pstate.velocity += move_speed
 	get_node("../PlayerInput").connect("input_intent", self, "_handle_intent")
 	
@@ -27,13 +26,15 @@ func _physics_process(_delta):
 		 change_state("idle")
 
 func move_left():
-	if animated_sprite.flip_h:
+	animated_sprite.play("walk_l")
+	if not is_direction_right():
 		pstate.velocity.x = max(pstate.velocity.x, move_speed.x)
 	else:
 		change_state("idle")
 
 func move_right():
-	if not animated_sprite.flip_h:
+	animated_sprite.play("walk_r")
+	if is_direction_right():
 		pstate.velocity.x = max(pstate.velocity.x, move_speed.x)
 	else:
 		change_state("idle")

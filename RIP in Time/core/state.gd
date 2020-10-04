@@ -28,3 +28,5 @@ func move_left():
 func move_right():
 	pass
 
+func is_direction_right():
+	return pstate.direction.x > 0

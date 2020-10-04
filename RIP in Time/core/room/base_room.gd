@@ -4,6 +4,11 @@ class_name BaseRoom
 
 const _dialogue_scene = preload("res://core/dialogue/dialogue.tscn")
 
+const KeyFob = preload("res://core/item/key_fob/key_fob.tscn")
+const Axe = preload("res://core/item/axe/axe.tscn")
+const Gun = preload("res://core/item/gun/gun.tscn")
+const Battery = preload("res://core/item/battery/battery.tscn")
+
 var items = {
 #	"key": KeyItem,
 #	"battery": BatteryItem,
@@ -40,10 +45,16 @@ func _do_item_pickup(item):
 	emit_signal("pickup_item", item.id)
 	item.queue_free()
 
-func _on_drop_item(item_id, position):
-	var item: Node2D = items.get(item_id).scene_instance()
-	item.position = position
+func _on_drop_item(item, x_position):
+	item.set_position(Vector2(x_position, item.get_floor_y_position()))
+	item.connect("item_picked_up", player, "on_item_picked_up")
+	item.connect("item_picked_up", self, "on_item_picked_up")
 	add_child(item)
+	move_child($Camera, get_child_count())
+
+func on_item_picked_up(item):
+	remove_child(item)
+	item.disconnect("item_picked_up", self, "on_item_picked_up")
 
 func _on_dialogue_complete():
 	emit_signal("interact_complete")

@@ -14,6 +14,11 @@ var carried_item = null
 signal interact_with(target)
 signal drop_item(item)
 
+func on_item_picked_up(item):
+	carried_item = item
+	item.disconnect("item_picked_up", self, "on_item_picked_up")
+	
+
 func _ready():
 	set_physics_process(true)
 	state_factory = PlayerStates.new()
