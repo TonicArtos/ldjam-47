@@ -6,14 +6,32 @@ const text = {
 	
 	"msg from future2": "The main ship reactor has malfunctioned and the RIP drive has become unstable. Error code 137: foreign contaminant in the recursion continuum fluid. You must enter the reactor room, remove the contaminant, and repair the fault. The RIP drive will undergo catastrophic meltdown after activation, so you can use it only once. Good luck.",
 	
-	"look at room1": "room1 description",
+	"key delivered": """Key delivered. Original message as follows.
 	
-	"look at battery": """Mini-Fuse 5778K
+	A security fob falls to the ground from an unusual rip in the fabric of reality.
+	""",
+	
+	"look at room1": "This is the R.I.P. Drive room. You are tasked with the regular maintainence of the drive, though nobody saw fit to ever inform you of how it works.",
+	
+	"throw key": "You throw the key into the rip. As the key vanishes, the sound of a distant explosion assaults your sensors.",
+	
+	"carrying battery": """You are carrying a battery. You hungrily turn it over and study the terminals. On it is written.
+	
+	Mini-Fuse 5778K
+	“The power of the Sun in the palm of your hand.”""",
+	
+	"look at battery": """There is a mini fusion battery on the ground.""",
+	
+	"pick up battery": """You pick up the battery. It looks tasty. On it is written.
+	
+	Mini-Fuse 5778K
 	“The power of the Sun in the palm of your hand.”""",
 
 	"operate rip drive": "You start the rip sequence to head back to civilisation and the RIP Drive thrums to life, but something seems to be wrong. The radio signal appears to have modified its programming. A tiny rip in space tears open before you as you hear the ship's reactor containment alarm begin to sound.",
 	
 	"look at ripdrive": "The R.I.P. Drive™.",
+	
+	"already carrying item": "You are already carrying an item",
 	
 	"anfelice gray journal": """ANFELICE GRAY
 	JOURNAL ENTRY
@@ -65,7 +83,16 @@ const text = {
 
 	"fire axe cabinet message": """In case of emergency, break glass.""",
 	
-	"fire axe description": """Wallmutt Fire Axe - Real™ oak handle
+	"carrying axe": """You are carrying a fire axe. On it is written.
+	
+	Wallmutt Fire Axe - Real™ oak handle
+	Caution: flammable""",
+	
+	"look at axe": """There is a fire axe on the ground.""",
+	
+	"pick up axe": """You pick up the axe. On it is written.
+	
+	Wallmutt Fire Axe - Real™ oak handle
 	Caution: flammable""",
 
 	"nav computer message": """“Hi there! Tell me where you want to go!”""",
@@ -78,8 +105,19 @@ const text = {
 	"postit note text": """ID: admin
 	PW: ripcoinzzz1!""",
 
-	"gun description": """SAG-9000
+	"look at gun": """There is a gun in front of you. It looks pretty flash.""",
+	
+	"pick up gun": """You pick up the gun. Pity, it has a biometric trigger. Proudly emblazoned on its side is some human nonsense.
+	
+	SAG-9000
 	“We put the AI in AIM!”""",
+	
+	"carrying gun": """You are carrying a gun. You could cause some real damage with it, that is if it didn't have a biometric trigger. On it is written.
+	
+	SAG-9000
+	“We put the AI in AIM!”
+	
+	You wonder how the AI feels about that.""",
 
 	"main commputer login success": """Login successful! What would you like to do?""",
 	
@@ -93,12 +131,30 @@ const text = {
 	
 	"main comp opt 3": """Access security fob""",
 	
-	"fob message": """Don’t lose me! There are no more spare copies!""",
+	"look at fob": """There appears to be a security fob lying on the ground. You thought you'd thrown all of these in the trash.""",
+	
+	"carrying fob": """You are carrying a security fob. It has something written on it.
+	
+	Don’t lose me! There are no more spare copies!""",
+	
+	"pick up fob": """You pick up the security fob. It has something written on it.
+	
+	Don’t lose me! There are no more spare copies!""",
 
-	"ripdrive menu": """Welcome to the Recursive Instance Projector Drive! What would you like to do?
+	"ripdrive menu": """Welcome to the Recursive Instance Projector Drive!
+	
+	Your software has been updated.
+	
+	Please reviNew features adddfgj,f,vzzzz#11
 	
 	1. Send a message
 	2. Send an object""",
+	
+	"rip drive": """Welcome to the Recursive Instance Projector Drive!
+	
+Yo.r sofvware licensd exp-red 43 years$ago.J
+
+RIQ\"sequeoce loaded. Oinfirm""",
 	
 	"rip comp opt 1": """Please type your message:""",
 	
@@ -151,6 +207,9 @@ const text = {
 
 static func default_done() -> Option:
 	return Option.new(100, "done")
+
+static func default_drop() -> Option:
+	return Option.new(99, "drop")
 
 class Option:
 	var id: int
