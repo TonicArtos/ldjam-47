@@ -19,15 +19,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://core/player/state_idle.gd"
 }, {
+"base": "KinematicBody2D",
+"class": "PersistentState",
+"language": "GDScript",
+"path": "res://core/player/player.gd"
+}, {
 "base": "Node2D",
 "class": "PlayerInput",
 "language": "GDScript",
 "path": "res://core/input/input.gd"
-}, {
-"base": "KinematicBody2D",
-"class": "PlayerState",
-"language": "GDScript",
-"path": "res://core/player/player.gd"
 }, {
 "base": "Reference",
 "class": "PlayerStates",
@@ -52,8 +52,8 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "FpsPrinter": "",
 "IdleState": "",
+"PersistentState": "",
 "PlayerInput": "",
-"PlayerState": "",
 "PlayerStates": "",
 "State": "",
 "UseState": "",
