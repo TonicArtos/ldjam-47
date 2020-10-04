@@ -38,13 +38,10 @@ func _message_from_the_future():
 	if get_parent().key_fob_delivered:
 		pass
 
-const LOOP_ENTER_POS = Vector2(496, 352)
-const CAPSULE_ENTER_POS = Vector2(656, 352)
+const LINK_ENTER_POS = Vector2(172, 400)
 
 func enter_from(from: String, player: PlayerState):
 	_enter_player(player)
 	match from:
-		"loop":
-			player.set_position(LOOP_ENTER_POS)
-		"capsule":
-			player.set_position(CAPSULE_ENTER_POS)
+		"link":
+			player.set_position(LINK_ENTER_POS)

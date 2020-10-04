@@ -3,7 +3,10 @@ extends State
 class_name IdleState
 
 func _ready():
-	animated_sprite.play("idle")
+	if is_direction_right():
+		animated_sprite.play("idle_r")
+	else:
+		animated_sprite.play("idle_l")
 	pstate.velocity.x = 0
 	get_node("../PlayerInput").connect("input_intent", self, "_handle_intent")
 
@@ -21,22 +24,25 @@ func _handle_intent(action):
 func _physics_process(_delta):
 	pstate.velocity.x = 0
 
+
+
 func _flip_direction():
-	animated_sprite.flip_h = not animated_sprite.flip_h
-	if animated_sprite.flip_h:
+	if is_direction_right():
 		pstate.direction = State.LEFT
+		animated_sprite.play("idle_l")
 	else:
 		pstate.direction = State.RIGHT
+		animated_sprite.play("idle_r")
 
 func move_left():
-	if animated_sprite.flip_h:
+	if not is_direction_right():
 		change_state("walk")
 	else:
 		_flip_direction()
 		change_state("walk")
 
 func move_right():
-	if not animated_sprite.flip_h:
+	if is_direction_right():
 		change_state("walk")
 	else:
 		_flip_direction()

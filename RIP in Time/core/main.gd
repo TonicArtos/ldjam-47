@@ -2,10 +2,10 @@ extends Node2D
 
 var key_fob_delivered = false
 
-const RipDriveRoom = preload("res://core/room/room1.tscn")
-const CapsuleRoom = preload("res://core/room/room1.tscn")
-const BridgeRoom = preload("res://core/room/room1.tscn")
-const ReactorRoom = preload("res://core/room/room1.tscn")
+const RipDriveRoom = preload("res://core/room/rip_drive_room.tscn")
+const CapsuleRoom = preload("res://core/room/rip_drive_room.tscn")
+const BridgeRoom = preload("res://core/room/rip_drive_room.tscn")
+const ReactorRoom = preload("res://core/room/rip_drive_room.tscn")
 const Player = preload("res://core/player/player.tscn")
 
 const BOOM_TIME: int = 168 #seconds
@@ -43,7 +43,7 @@ func _start_loop():
 	$AudioStreamPlayer.play()
 	yield(get_tree().create_timer(2), "timeout")
 	current_camera = current_room.get_node("Camera")
-	current_room.enter_from("capsule", Player.instance())
+	current_room.enter_from("link", Player.instance())
 	current_room.start_intro()
 	current_camera.fade_in(8)
 	stored_rooms["RipDriveRoom"] = current_room
@@ -62,9 +62,9 @@ func _enter_room(room: String, from: String, player: PlayerState):
 	remove_child(current_room)
 	if recalled == null:
 		match room:
-			"CapsuleRoom":
+			"LinkRoom":
 				current_room = CapsuleRoom.instance()
-				stored_rooms["CapsuleRoom"] = current_room
+				stored_rooms["LinkRoom"] = current_room
 			"BridgeRoom":
 				current_room = BridgeRoom.instance()
 				stored_rooms["BridgeRoom"] = current_room

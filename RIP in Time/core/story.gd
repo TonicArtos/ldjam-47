@@ -1,7 +1,7 @@
 class_name Story
 
 const text = {
-	"msg from future1": """Transmitted: 00:15:23 10 October 3030 EET
+	"msg from future1": """Transmitted: 00:13:06 10 October 3030 EET
 	Received: 00:10:18 10 October 3030 EET""",
 	
 	"msg from future2": "The main ship reactor has malfunctioned and the RIP drive has become unstable. Error code 137: foreign contaminant in the recursion continuum fluid. You must enter the reactor room, remove the contaminant, and repair the fault. The RIP drive will undergo catastrophic meltdown after activation, so you can use it only once. Good luck.",
