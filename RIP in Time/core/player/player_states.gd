@@ -7,6 +7,7 @@ func _init():
 		"idle": IdleState,
 		"walk": WalkState,
 		"use": UseState,
+		"intro": IntroState,
 	}
 
 func get_state(state_name):

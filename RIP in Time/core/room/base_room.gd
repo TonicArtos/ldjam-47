@@ -11,16 +11,21 @@ var items = {
 #	"sag9000": Sag9kItem,
 }
 
+var player: PlayerState
+
 signal interact_complete()
 signal pickup_item(item_id)
 
-func _ready():
-	$Player.connect("drop_item", self, "_on_drop_item")
-	$Player.connect("interact_with", self, "_on_player_interaction")
+func _enter_player(player: PlayerState):
+	add_child(player)
+	move_child($Camera, get_child_count())
+	self.player = player
+	player.connect("drop_item", self, "_on_drop_item")
+	player.connect("interact_with", self, "_on_player_interaction")
 
 func _exit_tree():
-	$Player.disconnect("drop_item", self, "_on_drop_item")
-	$Player.disconnect("interact_with", self, "_on_player_interaction")
+	player.disconnect("drop_item", self, "_on_drop_item")
+	player.disconnect("interact_with", self, "_on_player_interaction")
 
 func _on_player_interaction(target):
 	# instance dialogue and link with player and target
@@ -29,7 +34,7 @@ func _on_player_interaction(target):
 	dialogue.connect("drop_item", self, "_on_drop_item")
 	dialogue.connect("dialogue_complete", self, "_on_dialogue_complete")
 	add_child(dialogue)
-	$Dialogue.start(target, $Player)
+	$Dialogue.start(target, player)
 
 func _do_item_pickup(item):
 	emit_signal("pickup_item", item.id)

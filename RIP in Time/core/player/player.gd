@@ -17,13 +17,12 @@ signal drop_item(item)
 func _ready():
 	set_physics_process(true)
 	state_factory = PlayerStates.new()
-	change_state("idle")
+	change_state("use")
 	$InteractArea.connect("area_entered", self, "_area_entered")
 	$InteractArea.connect("area_exited", self, "_area_exited")
 	get_parent().connect("interact_complete", self, "_on_interaction_complete")
 	get_parent().connect("pickup_item", self, "_on_pickup_item")
-	
-	
+
 func _exit_tree():
 	$InteractArea.disconnect("area_entered", self, "_area_entered")
 	$InteractArea.disconnect("area_exited", self, "_area_exited")

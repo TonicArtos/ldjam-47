@@ -21,8 +21,8 @@ static func default_done() -> Option:
 
 class Option:
 	var id: int
-	
 	var label: String
+	
 	func _init(id: int, label: String):
 		self.id = id
 		self.label = label

@@ -25,10 +25,10 @@ func _ready():
 	message_display = get_node("Control/CenterContainer/HBoxContainer/Message9Patch/MessageMargins/Message")
 	menu_holder = get_node("Control/CenterContainer/HBoxContainer/Menu9Patch/MenuMargins")
 
-func start(target, player):
+func start(target, player, initial_id: int = 0):
 	self.target = target
 	self.player = player
-	_handle_message(target.get_dialogue(0, player.carried_item))
+	_handle_message(target.get_dialogue(initial_id, player.carried_item))
 	
 func _physics_process(delta):
 	if max_characters > show_characters:
