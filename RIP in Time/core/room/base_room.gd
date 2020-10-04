@@ -25,11 +25,11 @@ func _exit_tree():
 func _on_player_interaction(target):
 	# instance dialogue and link with player and target
 	var dialogue = _dialogue_scene.instance()
-	dialogue.load_data(target, $player)
 	dialogue.connect("pickup_item", self, "_do_item_pickup")
 	dialogue.connect("drop_item", self, "_on_drop_item")
 	dialogue.connect("dialogue_complete", self, "_on_dialogue_complete")
 	add_child(dialogue)
+	$Dialogue.start(target, $Player)
 
 func _do_item_pickup(item):
 	emit_signal("pickup_item", item.id)
