@@ -8,8 +8,8 @@ const BridgeRoom = preload("res://core/room/room1.tscn")
 const ReactorRoom = preload("res://core/room/room1.tscn")
 const Player = preload("res://core/player/player.tscn")
 
-#const BOOM_TIME: int = 168 #seconds
-const BOOM_TIME: int = 5 #seconds
+const BOOM_TIME: int = 168 #seconds
+#const BOOM_TIME: int = 5 #seconds
 const BOOM_DELAY = 2
 const BOOM_WHITE_OUT_SPEED = 0.1
 const FADE_SPEED = 0.2
