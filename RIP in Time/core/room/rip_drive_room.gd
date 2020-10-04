@@ -2,7 +2,7 @@ extends BaseRoom
 
 var dialogues = {
 	0 : Story.Message.new("look at room1", [Story.default_done()]),
-	1 : Story.Message.new("msg from future1", [Story.Option.new(2, "...")]),
+	1 : Story.Message.new("msg from future1", [Story.Option.new(2, "continue")]),
 	2 : Story.Message.new("msg from future2", [Story.default_done()]),
 }
 

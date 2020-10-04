@@ -24,6 +24,7 @@ func _ready():
 	_start_loop()
 
 func _on_boom():
+	current_room.get_node("Dialogue").queue_free()
 	current_camera.start_shake(1, 0.02, BOOM_DELAY + BOOM_WHITE_OUT_SPEED * 4)
 	current_camera.start_flash(0.15, 0.8, 0.15)
 	yield(get_tree().create_timer(1), "timeout")

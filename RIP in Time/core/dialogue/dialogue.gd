@@ -39,7 +39,6 @@ func _handle_message(message: Story.Message):
 	message_display.set_text(Story.text[message.text_id])
 	max_characters = message_display.text.length()
 	show_characters = 0
-	print(message_display.text)
 	if menu != null:
 		menu.disconnect("menu_entry_chosen", self, "_on_menu_entry_chosen")
 	menu = Menu.instance()

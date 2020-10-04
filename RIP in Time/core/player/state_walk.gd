@@ -2,7 +2,7 @@ extends State
 
 class_name WalkState
 
-var move_speed = Vector2(180, 0)
+var move_speed = Vector2(60, 0)
 var min_move_speed = 0.005
 
 
