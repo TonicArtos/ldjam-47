@@ -182,17 +182,17 @@ const text = {
 	
 	You wonder how the AI feels about that.""",
 
-	"main commputer login success": """Login successful! What would you like to do?""",
+	"main computer login success": """Login successful! What would you like to do?""",
 	
-	"main computer options": """1. View ship log
-	2. Initiate self-destruct sequence
-	3. Access security fob""",
-	
-	"main comp opt 1": """We are prepped and ready for the next RIP jump. I have warned the crew that based on the incidence pattern so far, we are likely to encounter void interference. However, this was dismissed by Captain Koppel. Should anything go wrong, I will quote him for posterity: “Eh, no big deal. You bots are always so paranoid. Just chill out and enjoy the ride.”""",
+	"view log": """We are prepped and ready for the next RIP jump. I have warned the crew that based on the incidence pattern so far, we are likely to encounter void interference. However, this was dismissed by Captain Koppel. Should anything go wrong, I will quote him for posterity: “Eh, no big deal. You bots are always so paranoid. Just chill out and enjoy the ride.”""",
 
-	"main comp opt 2": """Are you sure?""",
+	"self destruct 1": """Are you sure?""",
 	
-	"main comp opt 3": """Access security fob""",
+	"self destruct 2": """The self destruct count down is very short and there seems to be no way to stop it.""",
+	
+	"take key 1": """The shield over the security fob retracts and you take it.""",
+	
+	"take key 2": """The shield over the security fob retracts, but the receptacle is already empty.""",
 	
 	"look at fob": """There appears to be a security fob lying on the ground. You thought you'd thrown all of these in the trash.""",
 	

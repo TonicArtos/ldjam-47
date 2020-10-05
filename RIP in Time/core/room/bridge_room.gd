@@ -27,3 +27,4 @@ func _ready():
 	$Capsule6.connect("occupant_waking_up", self, "_occupant_waking")
 	$Gun.connect("picked_up_gun", self, "_picked_up_gun")
 	$LinkDoor.connect("entered_door", self, "_queue_enter_room")
+	$Computer.connect("picked_up_key", self, "_picked_up_key")

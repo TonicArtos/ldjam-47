@@ -43,6 +43,7 @@ position = Vector2( 476, 396 )
 
 [node name="Computer" parent="." instance=ExtResource( 5 )]
 position = Vector2( 676, 392 )
+has_key = true
 
 [node name="Capsule5" parent="." instance=ExtResource( 6 )]
 position = Vector2( 252, 348 )
