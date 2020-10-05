@@ -24,17 +24,13 @@ __meta__ = {
 
 [node name="BridgeDoor" parent="." instance=ExtResource( 2 )]
 position = Vector2( 104, 380 )
-is_unlocked = false
 is_axe_door = true
-is_cabin_door = false
 destination_room = "BridgeRoom"
 from_room = "LinkRoom"
 
 [node name="RipDoor" parent="." instance=ExtResource( 2 )]
 position = Vector2( 860, 380 )
 is_unlocked = true
-is_axe_door = false
-is_cabin_door = false
 destination_room = "RipDriveRoom"
 from_room = "LinkRoom"
 
@@ -44,6 +40,7 @@ texture = ExtResource( 1 )
 
 [node name="ReactorDoor" parent="." instance=ExtResource( 3 )]
 position = Vector2( 232, 372 )
+is_axe_door = true
 
 [node name="Axe" parent="." instance=ExtResource( 5 )]
 position = Vector2( 748, 396 )
