@@ -155,6 +155,18 @@ const text = {
 
 	"postit note text": """ID: admin
 	PW: ripcoinzzz1!""",
+	
+	"gun holder with gun": """gun holder with gun
+	TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO 
+	""",
+	
+	"gun holder without gun": """gun holder without gun
+	TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO 
+	""",
+	
+	"take gun": """take gun
+	TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO 
+	""",
 
 	"look at gun": """There is a gun in front of you. It looks pretty flash.""",
 	
