@@ -41,8 +41,9 @@ const text = {
 	
 	"already carrying item": "You are already carrying an item",
 	
-	"anfelice gray journal": """ANFELICE GRAY
-	JOURNAL ENTRY
+	"pod 1": """ANFELICE GRAY""",
+	
+	"anfelice gray journal": """
 	Date: 14:14:59 17 September 3030 EET
 
 	Last time we went to sleep, I had the worst nightmare. A tiny black hole blasted through the ship and sucked us in one by one. Even though we’re meant to be near-dead in the cryo-pods, I felt the terror in my bones. It made me dread this sleep. I hope we don’t have to do many more jumps after this, because I don’t think I can take it.""",
@@ -243,29 +244,18 @@ RIQ\"sequeoce loaded. Oinfirm""",
 	
 	##################################################
 	
-	"reactor greeting": """reactor greeting
-	TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO 
+	"reactor greeting": """Welcome to the reactor terminal! What would you like to do?
 	""",
 	
-	"maintenance denied": """maintenance denied
-	TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO 
-	""",
+	"maintenance denied": """Access denied.""",
 	
-	"maintenance approved": """maintenance approved
-	TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO 
-	""",
+	"maintenance approved": """Maintenance mode enabled.""",
 	
-	"key inserted": """key inserted
-	TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO 
-	""",
+	"key inserted": """Security key accepted. Access granted.""",
 	
-	"monster released": """monster released
-	TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO 
-	""",
+	"monster released": """Congratulations! You have cleared the contaminant from the reactor.""",
 	
-	"stabilise reaction": """stabilise reaction
-	TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO 
-	""",
+	"stabilise reaction": """Reactor status: stable""",
 }
 
 static func default_done() -> Option:
