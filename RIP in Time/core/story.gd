@@ -4,16 +4,16 @@ const text = {
 	"msg from future1": """Transmitted: 00:13:06 10 October 3030 EET
 	Received: 00:10:18 10 October 3030 EET""",
 	
-	"msg from future2": "The main ship reactor has malfunctioned and the RIP drive has become unstable. Error code 137: foreign contaminant in the recursion continuum fluid. You must enter the reactor room, remove the contaminant, and repair the fault. The RIP drive will undergo catastrophic meltdown after activation, so you can use it only once. Good luck.",
+	"msg from future2": "The main ship reactor has malfunctioned and the R.I.P. drive has become unstable. Error code 137: foreign contaminant in the recursion continuum fluid. You must enter the reactor room, remove the contaminant, and repair the fault. The RIP drive will undergo catastrophic meltdown after activation, so you can use it only once. Good luck.",
 	
 	"key delivered": """Key delivered. Original message as follows.
 	
 	A security fob falls to the ground from an unusual rip in the fabric of reality.
 	""",
 	
-	"look at rip room": "This is the R.I.P. Drive room. For more than 40 years you have been tasked with the regular maintainence of the drive, though nobody saw fit to ever inform you of how it actually works.",
+	"look at rip room": "This is the R.I.P. Drive room.",
 	
-	"look at link room": "Cryo-pods line the walls. The bodies of the crew are barely visible behind the layers of glass and super-chilled gas.",
+	"look at link room": "This is the cryo-pod link. The human crew members are safely asleep in their chilled pods.",
 	
 	"look at bridge room": "The bridge is the nerve center of ship. Though the real work happens on the far side of the crew cabins where the machine shop is. Not to mention the four kilometre long ripcoin harvesters dangling from the tiny habitation module.",
 	
@@ -33,18 +33,17 @@ const text = {
 	Mini-Fuse 5778K
 	“The power of the Sun in the palm of your hand.”""",
 
-	"operate rip drive": "You start the rip sequence to head back to civilisation and the RIP Drive thrums to life, but something seems to be wrong. The radio signal appears to have modified its programming. A tiny rip in space tears open before you as you hear the ship's reactor containment alarm begin to sound.",
+	"operate rip drive": """Commencing primary ignition.......................................
+	Fault detected!""",
 	
 	"rip drive running": "The RIP drive terminal doesn't respond. The modification must have blown its logic circuits once it started the RIP operation.",
 	
-	"inspect rip drive": "You were tasked with maintaining the drive, but nobody ever told you how. You give the body of the device a good look over anyway. It would appear that the strange vibration earlier has not affected it. You notice there is a auxiliary battery plugged in.",
+	"inspect rip drive": "The R.I.P. drive appears undamaged by the strange vibration. There is an auxiliary battery plugged in.",
 	
-	"remove battery": """You remove the battery from its socket. On it is written.
-	
-	Mini-Fuse 5778K
+	"remove battery": """Mini-Fuse 5778K
 	“The power of the Sun in the palm of your hand.”""",
 	
-	"inspect rip drive battery gone": """You were tasked with maintaining the drive, but nobody ever told you how. You give the body of the device a good look over anyway. It would appear that the strange vibration earlier has not affected it. The socket for the auxiliary battery is now empty.""",
+	"inspect rip drive battery gone": """The R.I.P. drive appears undamaged by the strange vibration. The socket for the auxiliary battery is empty.""",
 	
 	"already carrying item": "You are already carrying an item",
 	
@@ -96,9 +95,9 @@ const text = {
 	
 	ERROR: LOCK NON_RESPONSIVE. THIS DOOR MAY NOT FUNCTION AS INTENDED.""",
 	
-	"open battery door unlocked": """The door emits sparks and a little smoke as it opens, but nothing else untoward happens and you trundle through.""",
+	"open battery door unlocked": """Door override enabled.""",
 	
-	"apply battery to door": """You press the battery terminals to the door pad and hold down the battery's emergency discharge button. A bolt of electricity leaps across the keypad and door frame as the \"power of the sun\" is unleashed. After a moment, smoke belches from the key pad and the door groans. On the door pad, a lock symbol flashes for a moment before finally fading away.""",
+	"apply battery to door": """BZZZZZT""",
 	
 	"axe door status": """EMERGENCY LOCK ACTIVATED
 	CONDITION 8: SUDDEN LOSS OF CABIN PRESSURE""",
@@ -111,7 +110,7 @@ const text = {
 	
 	"open axe door unlocked": """You grasp the door and pull it high enough to lever yourself through the gap. after you pass through, the door crunches down onto the axe driving it further into the door's mechanism.""",
 	
-	"apply axe to door": """You wedge the fire axe into the base of the door, enough to get your single Xenotron Manipulator Mark V (patent pending) in the crack. You use your superior robot strength to lever the door open and search for a way to keep it like that. Your servos scream as you manage to shoulder your way under the door and take its weight. You try to grab the axe, but in the struggle it has somehow wedged into the door's mechanism. You manage to adjust it somewhat to keep the door propped open, making passing through the door a little easier.""",
+	"apply axe to door": """After levering the door open, the axe gets jammed between the door frame and the door.""",
 	
 	"cabin door status": """EMERGENCY LOCK ACTIVATED
 	CONDITION 8: SUDDEN LOSS OF CABIN PRESSURE
@@ -128,22 +127,19 @@ const text = {
 	"reactor room door status": """EMERGENCY LOCK ACTIVATED
 	CONDITION 8: SUDDEN LOSS OF CABIN PRESSURE""",
 
-	"axe holder with axe": """In case of emergency, break glass. Behind the glass is a fire axe.""",
+	"axe holder with axe": """In case of emergency, break glass.""",
 	
 	"axe holder without axe": """The fire axe cabinet's glass has been smashed in.""",
 	
-	"take axe": """You smash the glass and take the axe from inside. A human might have worried about cuts from the glass shards, but they don't even leave a mark on your dull metal exterior.""",
+	"take axe": """Wallmutt Fire Axe - Real™ oak handle
+	Caution: flammable""",
 	
-	"carrying axe": """You are carrying a fire axe. On it is written.
-	
-	Wallmutt Fire Axe - Real™ oak handle
+	"carrying axe": """Wallmutt Fire Axe - Real™ oak handle
 	Caution: flammable""",
 	
 	"look at axe": """There is a fire axe on the ground.""",
 	
-	"pick up axe": """You pick up the axe. On it is written.
-	
-	Wallmutt Fire Axe - Real™ oak handle
+	"pick up axe": """	Wallmutt Fire Axe - Real™ oak handle
 	Caution: flammable""",
 
 	"nav computer message": """“Hi there! Tell me where you want to go!”""",

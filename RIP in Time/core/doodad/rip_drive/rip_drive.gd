@@ -17,7 +17,7 @@ var dialogues = {
 		"rip drive", 
 		[
 			Story.Option.new(4, "inspect"),
-			Story.Option.new(1, "confirm"),
+			Story.Option.new(1, "activate"),
 			Story.default_done(),
 		]
 	),
