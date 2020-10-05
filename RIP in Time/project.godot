@@ -20,6 +20,11 @@ _global_script_classes=[ {
 "path": "res://core/room/base_room.gd"
 }, {
 "base": "Node2D",
+"class": "Capsule",
+"language": "GDScript",
+"path": "res://core/doodad/capsule/capsule.gd"
+}, {
+"base": "Node2D",
 "class": "Computer",
 "language": "GDScript",
 "path": "res://core/doodad/computer/computer.gd"
@@ -117,6 +122,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "AxeDoodad": "",
 "BaseRoom": "",
+"Capsule": "",
 "Computer": "",
 "Dialogue": "",
 "DialogueMenu": "",
