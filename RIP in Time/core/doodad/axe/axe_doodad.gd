@@ -25,6 +25,7 @@ var dialogues = {
 	0 : Story.Message.new("axe holder with axe", [Story.Option.new(1, "take axe"), Story.default_done()]),
 	1 : Story.Message.new("axe holder without axe", [Story.default_done()]),
 	2 : Story.Message.new("take axe", [Story.Option.new(0, "back")]),
+	3 : Story.Message.new("already carrying item", [Story.Option.new(0, "back")]),
 }
 
 func get_dialogue(id: int, item):
@@ -34,8 +35,11 @@ func get_dialogue(id: int, item):
 			id = 0 if has_axe else 1
 			r = dialogues[id]
 		1:
-			r = dialogues[2]
-			emit_signal("picked_up_axe")
-			has_axe = false
-			$Sprite2.visible = false
+			if item == null:
+				r = dialogues[2]
+				emit_signal("picked_up_axe")
+				has_axe = false
+				$Sprite2.visible = false
+			else:
+				r = dialogues[3]
 	return r

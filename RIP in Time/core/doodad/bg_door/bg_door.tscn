@@ -20,7 +20,22 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
-"name": "propped_open_red",
+"name": "propped_open_reactor",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "closed_reactor",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "closed_link",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "propped_open_link",
 "speed": 5.0
 } ]
 
@@ -32,7 +47,7 @@ script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "New Anim"
+animation = "closed"
 
 [node name="Interactable" type="Area2D" parent="."]
 script = ExtResource( 4 )
