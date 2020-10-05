@@ -3,7 +3,7 @@ extends Node2D
 var key_fob_delivered = false
 var rip_completed = false
 var player_died = false
-var monster_unleashed = true
+var monster_unleashed = false
 var monster_digesting = false
 var occupants_waking = []
 
@@ -29,8 +29,8 @@ var stored_rooms = {}
 
 func _ready():
 	$BoomTimer.connect("timeout", self, "_on_boom")
-	#_start_loop()
-	_test_room("RipDriveRoom", "LinkRoom")
+	_start_loop()
+	#_test_room("RipDriveRoom", "LinkRoom")
 
 func _on_player_died():
 	print("here")
