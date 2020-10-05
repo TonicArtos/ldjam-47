@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://gfx/room/room1/Room_1_Graphic.png" type="Texture" id=1]
+[ext_resource path="res://gfx/room/room1/Room_1_Graphic_v2.png" type="Texture" id=1]
 [ext_resource path="res://core/room/rip_drive_room.gd" type="Script" id=2]
 [ext_resource path="res://core/doodad/rip_drive/rip_drive.tscn" type="PackedScene" id=3]
 [ext_resource path="res://core/doodad/wall_door/wall_door.tscn" type="PackedScene" id=5]

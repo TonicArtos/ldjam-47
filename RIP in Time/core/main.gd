@@ -25,7 +25,7 @@ var stored_rooms = {}
 func _ready():
 	$BoomTimer.connect("timeout", self, "_on_boom")
 	#_start_loop()
-	_test_room("LinkRoom", "RipDriveRoom")
+	_test_room("BridgeRoom", "LinkRoom")
 
 func _on_boom():
 	var dialogue = current_room.get_node("Dialogue")

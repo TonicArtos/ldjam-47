@@ -40,6 +40,9 @@ texture = ExtResource( 1 )
 
 [node name="ReactorDoor" parent="." instance=ExtResource( 3 )]
 position = Vector2( 232, 372 )
+is_axe_door = true
+destination_room = "ReactorRoom"
+from_room = "LinkRoom"
 
 [node name="Axe" parent="." instance=ExtResource( 5 )]
 position = Vector2( 748, 396 )
