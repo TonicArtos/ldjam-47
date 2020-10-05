@@ -34,7 +34,8 @@ func _ready():
 
 func _enter_tree():
 	if get_parent().monster_unleashed:
-		$MonsterTimer.start(3)
+		yield(get_tree().create_timer(3.0), "timeout")
+		_spawn_monster()
 
 func _spawn_monster():
 	var monster = Monster.instance()

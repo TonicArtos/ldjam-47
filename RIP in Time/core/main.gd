@@ -37,7 +37,7 @@ func set_monster_unleashed(val):
 func _ready():
 	$BoomTimer.connect("timeout", self, "_on_boom")
 	_start_loop()
-	#_test_room("RipDriveRoom", "LinkRoom")
+	#_test_room("ReactorRoom", "LinkRoom")
 
 func _on_player_died():
 	print("here")

@@ -43,16 +43,19 @@ func _ready():
 	$ReactorDoor.connect("entered_door", self, "_queue_enter_room")
 	$ReactorDoor.connect("used_axe", self, "_used_item")
 	$MonsterTimer.connect("timeout", self, "_spawn_monster")
+	if get_parent().monster_unleashed:
+		$MonsterTimer.start(3)
 
 func _enter_tree():
 	if get_parent().monster_unleashed:
-		$MonsterTimer.start(4)
+		yield(get_tree().create_timer(3.0), "timeout")
+		_spawn_monster()
 
 func _used_battery():
 	player.carried_item = null
 
 func _spawn_monster():
 	var monster = Monster.instance()
-	monster.position = LEFT_ENTER_POS
+	monster.position = BG_ENTER_POS
 	add_child(monster)
 	move_child(camera, get_child_count())
