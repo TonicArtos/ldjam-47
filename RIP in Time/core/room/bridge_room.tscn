@@ -24,9 +24,6 @@ __meta__ = {
 
 [node name="CabinDoor" parent="." instance=ExtResource( 2 )]
 position = Vector2( 104, 380 )
-is_unlocked = false
-is_axe_door = false
-is_cabin_door = false
 destination_room = "CabinRoom"
 from_room = "BridgeRoom"
 
@@ -34,7 +31,6 @@ from_room = "BridgeRoom"
 position = Vector2( 860, 380 )
 is_unlocked = true
 is_axe_door = true
-is_cabin_door = false
 destination_room = "LinkRoom"
 from_room = "BridgeRoom"
 
@@ -47,8 +43,7 @@ position = Vector2( 476, 396 )
 
 [node name="Computer" parent="." instance=ExtResource( 5 )]
 position = Vector2( 676, 392 )
-has_key = false
-is_self_destruct = false
+has_key = true
 
 [node name="Capsule5" parent="." instance=ExtResource( 6 )]
 position = Vector2( 252, 348 )
