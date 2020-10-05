@@ -6,31 +6,25 @@ const text = {
 	
 	"msg from future2": "The main ship reactor has malfunctioned and the R.I.P. drive has become unstable. Error code 137: foreign contaminant in the recursion continuum fluid. You must enter the reactor room, remove the contaminant, and repair the fault. The RIP drive will undergo catastrophic meltdown after activation, so you can use it only once. Good luck.",
 	
-	"key delivered": """Key delivered. Original message as follows.
-	
-	A security fob falls to the ground from an unusual rip in the fabric of reality.
+	"key delivered": """A security fob falls to the ground from an unusual rip in the fabric of reality.
 	""",
 	
 	"look at rip room": "This is the R.I.P. Drive room.",
 	
 	"look at link room": "This is the cryo-pod link. The human crew members are safely asleep in their chilled pods.",
 	
-	"look at bridge room": "The bridge is the nerve center of ship. Though the real work happens on the far side of the crew cabins where the machine shop is. Not to mention the four kilometre long ripcoin harvesters dangling from the tiny habitation module.",
+	"look at bridge room": "This is the bridge. It is the main control center of the ship.",
 	
-	"look at reactor room": "This is the R.I.P. Drive room. You are tasked with the regular maintainence of the drive, though nobody saw fit to ever inform you of how it works.",
+	"look at reactor room": "This is the reactor room. It powers the ship's vital functions.",
 	
-	"throw key": "You throw the key into the rip. As the key vanishes, the sound of a distant explosion assaults your sensors.",
+	"throw key": "The key vanishes.",
 	
-	"carrying battery": """You are carrying a battery. You hungrily turn it over and study the terminals. On it is written.
-	
-	Mini-Fuse 5778K
-	“The power of the Sun in the palm of your hand.”""",
+	"carrying battery": """Mini-Fuse 5778K
+	'The power of the Sun in the palm of your hand.'""",
 	
 	"look at battery": """There is a mini fusion battery on the ground.""",
 	
-	"pick up battery": """You pick up the battery. It looks tasty. On it is written.
-	
-	Mini-Fuse 5778K
+	"pick up battery": """Mini-Fuse 5778K
 	“The power of the Sun in the palm of your hand.”""",
 
 	"operate rip drive": """Commencing primary ignition.......................................
@@ -106,11 +100,11 @@ const text = {
 	
 	CONDITION 8: SUDDEN LOSS OF CABIN PRESSURE
 	
-	A fire axe has been jammed into the mechanism and is propping the door open.""",
+	ERROR: OBSTACLE DETECTED""",
 	
-	"open axe door unlocked": """You grasp the door and pull it high enough to lever yourself through the gap. after you pass through, the door crunches down onto the axe driving it further into the door's mechanism.""",
+	"open axe door unlocked": """The door is jammed open.""",
 	
-	"apply axe to door": """After levering the door open, the axe gets jammed between the door frame and the door.""",
+	"apply axe to door": """Success.""",
 	
 	"cabin door status": """EMERGENCY LOCK ACTIVATED
 	CONDITION 8: SUDDEN LOSS OF CABIN PRESSURE
@@ -152,35 +146,23 @@ const text = {
 	"postit note text": """ID: admin
 	PW: ripcoinzzz1!""",
 	
-	"gun holder with gun": """gun holder with gun
-	TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO 
-	""",
+	"gun holder with gun": """A display case with a gun on it. It looks super awesome.""",
 	
-	"gun holder without gun": """gun holder without gun
-	TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO 
-	""",
+	"gun holder without gun": """Empty display case.""",
 	
-	"take gun": """take gun
-	TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO 
-	""",
+	"take gun": """The display case opens.""",
 
-	"look at gun": """There is a gun in front of you. It looks pretty flash.""",
+	"look at gun": """SAG-9000: We put the AI in AIM!""",
 	
-	"pick up gun": """You pick up the gun. Pity, it has a biometric trigger. Proudly emblazoned on its side is some human nonsense.
+	"pick up gun": """SAG-9000: We put the AI in AIM!
 	
-	SAG-9000
-	“We put the AI in AIM!”""",
+	The trigger appears to be biometrically activated.""",
 	
-	"carrying gun": """You are carrying a gun. You could cause some real damage with it, that is if it didn't have a biometric trigger. On it is written.
-	
-	SAG-9000
-	“We put the AI in AIM!”
-	
-	You wonder how the AI feels about that.""",
+	"carrying gun": """SAG-9000 is equipped.""",
 
 	"main computer login success": """Login successful! What would you like to do?""",
 	
-	"view log": """We are prepped and ready for the next RIP jump. I have warned the crew that based on the incidence pattern so far, we are likely to encounter void interference. However, this was dismissed by Captain Koppel. Should anything go wrong, I will quote him for posterity: “Eh, no big deal. You bots are always so paranoid. Just chill out and enjoy the ride.”""",
+	"view log": """We are prepped and ready for the next RIP jump. I have warned the crew that based on the incidence pattern so far, we are likely to encounter void interference. However, this was dismissed by Captain Koppel. Should anything go wrong, I will quote him for posterity: 'Eh, no big deal. You bots are always so paranoid. Just chill out and enjoy the ride.'""",
 
 	"self destruct 1": """Are you sure?""",
 	
@@ -190,15 +172,11 @@ const text = {
 	
 	"take key 2": """The shield over the security fob retracts, but the receptacle is already empty.""",
 	
-	"look at fob": """There appears to be a security fob lying on the ground. You thought you'd thrown all of these in the trash.""",
+	"look at fob": """There appears to be a security fob lying on the ground. It looks like a piece of garbage.""",
 	
-	"carrying fob": """You are carrying a security fob. It has something written on it.
+	"carrying fob": """Don’t lose me! There are no more spare copies!""",
 	
-	Don’t lose me! There are no more spare copies!""",
-	
-	"pick up fob": """You pick up the security fob. It has something written on it.
-	
-	Don’t lose me! There are no more spare copies!""",
+	"pick up fob": """Don’t lose me! There are no more spare copies!""",
 
 	"ripdrive menu": """Welcome to the Recursive Instance Projector Drive!
 	
