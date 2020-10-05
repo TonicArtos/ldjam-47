@@ -45,12 +45,13 @@ func _do_item_pickup(item):
 	emit_signal("pickup_item", item.id)
 	item.queue_free()
 
-func _on_drop_item(item, x_position):
-	item.set_position(Vector2(x_position, item.get_floor_y_position()))
+func _on_drop_item(item):
 	item.connect("item_picked_up", player, "on_item_picked_up")
 	item.connect("item_picked_up", self, "on_item_picked_up")
 	add_child(item)
+	item.set_position(Vector2(player.position.x, item.get_floor_y_position()))
 	move_child($Camera, get_child_count())
+	player.carried_item = null
 
 func on_item_picked_up(item):
 	remove_child(item)

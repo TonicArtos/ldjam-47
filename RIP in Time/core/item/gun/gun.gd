@@ -15,7 +15,7 @@ var dialogues = {
 	),
 	1 : Story.Message.new("gun message", [Story.default_done()]),
 	2 : Story.Message.new("already carrying item", [Story.default_done()]),
-	90 : Story.Message.new("carrying gun", [Story.default_done()]),
+	90 : Story.Message.new("carrying gun", [Story.Option.new(99, "drop"), Story.default_done()]),
 }
 
 func get_dialogue(id: int, item):

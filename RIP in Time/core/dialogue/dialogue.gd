@@ -54,6 +54,10 @@ func _on_menu_entry_chosen(id: int):
 	if id == 100:
 		emit_signal("dialogue_complete")
 		self.queue_free()
+	elif id == 99:
+		emit_signal("drop_item", player.carried_item)
+		emit_signal("dialogue_complete")
+		self.queue_free()
 	else:
 		_handle_message(target.get_dialogue(id, player.carried_item))
 
