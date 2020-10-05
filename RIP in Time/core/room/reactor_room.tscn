@@ -28,6 +28,7 @@ texture = ExtResource( 1 )
 position = Vector2( 216, 372 )
 is_unlocked = true
 is_axe_door = true
+sprite_suffix = "reactor"
 
 [node name="Reactor" parent="." instance=ExtResource( 2 )]
 position = Vector2( 544, 352 )

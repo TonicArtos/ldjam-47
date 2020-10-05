@@ -85,7 +85,7 @@ func get_dialogue(id: int, item):
 			r = dialogues[14]
 			emit_signal("used_axe")
 			is_unlocked = true
-			$AnimatedSprite.set_animation("propped_open")
+			$AnimatedSprite.set_animation("propped_open" if sprite_suffix.empty() else "propped_open_"+sprite_suffix)
 		20, 21:
 			r = dialogues[id]
 	return r
