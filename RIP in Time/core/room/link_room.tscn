@@ -27,13 +27,14 @@ position = Vector2( 104, 380 )
 is_axe_door = true
 destination_room = "BridgeRoom"
 from_room = "LinkRoom"
+sprite_suffix = "link"
 
 [node name="RipDoor" parent="." instance=ExtResource( 2 )]
 position = Vector2( 860, 380 )
 is_unlocked = true
 destination_room = "RipDriveRoom"
 from_room = "LinkRoom"
-sprite_suffix = "Link"
+sprite_suffix = "link"
 
 [node name="Room" type="Sprite" parent="."]
 position = Vector2( 480, 292 )
@@ -44,7 +45,7 @@ position = Vector2( 232, 372 )
 is_axe_door = true
 destination_room = "ReactorRoom"
 from_room = "LinkRoom"
-sprite_suffix = "Link"
+sprite_suffix = "link"
 
 [node name="Axe" parent="." instance=ExtResource( 5 )]
 position = Vector2( 748, 396 )
