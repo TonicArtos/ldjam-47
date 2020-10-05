@@ -31,7 +31,7 @@ func _ready():
 	$Reactor.connect("used_key", self, "_used_item")
 
 func _contaminant_released():
-	get_parent().monster_unleashed = true
+	get_parent().set_monster_unleashed(true)
 	var monster = Monster.instance()
 	monster.position = MONSTER_START
 	add_child(monster)

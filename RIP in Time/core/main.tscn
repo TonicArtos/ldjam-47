@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
+[ext_resource path="res://music/10_Ghosts_II.ogg" type="AudioStream" id=1]
 [ext_resource path="res://core/main.gd" type="Script" id=2]
 [ext_resource path="res://music/01_Ghosts_I.ogg" type="AudioStream" id=3]
 
@@ -8,6 +9,10 @@ script = ExtResource( 2 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+volume_db = -10.0
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
 volume_db = -10.0
 
 [node name="BoomTimer" type="Timer" parent="."]

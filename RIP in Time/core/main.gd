@@ -27,6 +27,11 @@ var player: PlayerState
 
 var stored_rooms = {}
 
+func set_monster_unleashed(val):
+	monster_unleashed = val
+	$AudioStreamPlayer.stop()
+	$AudioStreamPlayer2.play()
+
 func _ready():
 	$BoomTimer.connect("timeout", self, "_on_boom")
 	_start_loop()
@@ -38,6 +43,7 @@ func _on_player_died():
 	if dialogue != null:
 		dialogue.queue_free()
 	$AudioStreamPlayer.stop()
+	$AudioStreamPlayer2.stop()
 	yield(get_tree().create_timer(1), "timeout")
 	camera.fade_out(2)
 	yield(get_tree().create_timer(3), "timeout")
@@ -50,6 +56,7 @@ func _on_player_died():
 func _on_boom():
 	if monster_unleashed:
 		$AudioStreamPlayer.stop()
+		$AudioStreamPlayer2.stop()
 		camera.fade_out(1)
 		_end_screen()
 	else:
@@ -62,6 +69,7 @@ func _on_boom():
 		camera.white_out(BOOM_WHITE_OUT_SPEED)
 		yield(get_tree().create_timer(0.2), "timeout")
 		$AudioStreamPlayer.stop()
+		$AudioStreamPlayer2.stop()
 		camera.fade_out(0.1)
 		yield(get_tree().create_timer(2), "timeout")
 		_start_loop()
