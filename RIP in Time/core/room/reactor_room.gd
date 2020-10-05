@@ -1,5 +1,7 @@
 extends BaseRoom
 
+const Monster = preload("res://core/item/battery/battery.tscn")
+
 func enter_from(from: String, player: PlayerState, animate_door: bool = false):
 	_enter_player(player)
 	match from:
@@ -28,4 +30,5 @@ func _ready():
 	$Reactor.connect("used_key", self, "_used_item")
 
 func _contaminant_released():
+	get_parent().monster_unleashed = true
 	pass
