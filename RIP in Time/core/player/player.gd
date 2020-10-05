@@ -15,11 +15,15 @@ var carried_item = null
 
 signal interact_with(target)
 signal drop_item(item)
+signal died()
 
 func on_item_picked_up(item):
 	carried_item = item
 	item.disconnect("item_picked_up", self, "on_item_picked_up")
-	
+
+func kill():
+	change_state("use")
+	emit_signal("died")
 
 func _ready():
 	set_physics_process(true)

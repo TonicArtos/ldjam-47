@@ -1,5 +1,7 @@
 extends BaseRoom
 
+const Monster = preload("res://core/monster/monster_right.tscn")
+
 var dialogues = {
 	0 : Story.Message.new("look at rip room", [Story.default_done()]),
 	1 : Story.Message.new("msg from future1", [Story.Option.new(2, "continue")]),
@@ -28,6 +30,8 @@ func _ready():
 	$RipDriveTerminal.connect("picked_up_battery", self, "_picked_up_battery")
 	$LinkDoor.connect("entered_door", self, "_queue_enter_room")
 	$LinkDoor.connect("used_battery", self, "_used_item")
+	if get_parent().monster_unleashed and not get_parent().monster_digesting:
+		$MonsterTimer.start(7)
 
 func _exit_tree():
 	pass
@@ -97,3 +101,9 @@ func enter_from(from: String, player: PlayerState, animate_door: bool = false):
 	match from:
 		"LinkRoom":
 			player.set_position(LEFT_ENTER_POS)
+
+func _spawn_monster():
+	var monster = Monster.instance()
+	monster.position = LEFT_ENTER_POS
+	add_child(monster)
+	move_child(camera, get_child_count())

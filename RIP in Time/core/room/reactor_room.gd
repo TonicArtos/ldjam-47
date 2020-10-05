@@ -1,5 +1,8 @@
 extends BaseRoom
 
+const Monster = preload("res://core/monster/monster_left.tscn")
+const MONSTER_START = Vector2(580, 180)
+
 func enter_from(from: String, player: PlayerState, animate_door: bool = false):
 	_enter_player(player)
 	match from:
@@ -28,4 +31,8 @@ func _ready():
 	$Reactor.connect("used_key", self, "_used_item")
 
 func _contaminant_released():
-	pass
+	get_parent().monster_unleashed = true
+	var monster = Monster.instance()
+	monster.position = MONSTER_START
+	add_child(monster)
+	move_child(camera, get_child_count())
