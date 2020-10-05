@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://gfx/room/room2/Room_2_Wall_Door_Anim/Room_2_Wall_Door_Frame_2.png" type="Texture" id=1]
 [ext_resource path="res://gfx/room/room2/Room_2_Wall_Door_Anim/Room_2_Wall_Door_Frame_1.png" type="Texture" id=2]
+[ext_resource path="res://core/doodad/base_door.gd" type="Script" id=3]
+[ext_resource path="res://core/doodad/doodad_interactable.gd" type="Script" id=4]
+[ext_resource path="res://gfx/room/room4/Room_4_Door_Graphic.png" type="Texture" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -14,18 +17,25 @@ animations = [ {
 "loop": true,
 "name": "propped_open",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "propped_open_red",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 29.3518, 78.3681 )
 
 [node name="BgDoor" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "closed"
+animation = "New Anim"
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Interactable" type="Area2D" parent="."]
+script = ExtResource( 4 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
 shape = SubResource( 2 )

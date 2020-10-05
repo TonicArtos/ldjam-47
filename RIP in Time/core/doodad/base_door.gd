@@ -6,25 +6,26 @@ export var is_axe_door = false
 export var is_cabin_door = false
 export(String) var destination_room: String
 export(String) var from_room: String
+export(String) var sprite_suffix = ""
 
 signal used_axe()
 signal used_battery()
 signal entered_door(destination, from_room)
 
 func close_door():
-	if $AnimatedSprite.has_method("do_close"):
+	if $AnimatedSprite.has_method("do_close" if sprite_suffix.empty() else "do_close_"+sprite_suffix):
 		$AnimatedSprite.do_close()
 
 func _process(delta):
 	if Engine.editor_hint:
 		if is_axe_door and is_unlocked:
-			$AnimatedSprite.set_animation("propped_open")
+			$AnimatedSprite.set_animation("propped_open" if sprite_suffix.empty() else "propped_open_"+sprite_suffix)
 		else:
-			$AnimatedSprite.set_animation("closed")
+			$AnimatedSprite.set_animation("closed" if sprite_suffix.empty() else "closed_"+sprite_suffix)
 
 func _ready():
 	if is_axe_door and is_unlocked:
-		$AnimatedSprite.set_animation("propped_open")
+		$AnimatedSprite.set_animation("propped_open" if sprite_suffix.empty() else "propped_open_"+sprite_suffix)
 	else:
 		$AnimatedSprite.set_animation("closed")
 
@@ -61,7 +62,8 @@ func get_dialogue(id: int, item):
 			id = 3 if is_unlocked else 2
 			r = dialogues[id]
 			if id == 3:
-				$AnimatedSprite.do_open()
+				if $AnimatedSprite.has_method("do_open"):
+					$AnimatedSprite.do_open()
 				emit_signal("entered_door", destination_room, from_room)
 		2:
 			r = dialogues[4]
@@ -71,19 +73,19 @@ func get_dialogue(id: int, item):
 			id = 11 if is_unlocked else 10
 			r = dialogues[id]
 			if id == 10 and item != null and item.get_item_type() == "axe":
-				r.options = [Story.Option.new(11, "open door"), Story.Option.new(2, "use axe"), Story.default_done()]
+				r.options = [Story.Option.new(1, "open door"), Story.Option.new(2, "use axe"), Story.default_done()]
 			else:
-				r.options = [Story.Option.new(11, "open door"), Story.default_done()]
+				r.options = [Story.Option.new(1, "open door"), Story.default_done()]
 		11:
 			id = 13 if is_unlocked else 12
 			r = dialogues[id]
 			if id == 13:
-				$AnimatedSprite.do_open()
 				emit_signal("entered_door", destination_room, from_room)
 		12:
 			r = dialogues[14]
 			emit_signal("used_axe")
 			is_unlocked = true
+			$AnimatedSprite.set_animation("propped_open")
 		20, 21:
 			r = dialogues[id]
 	return r

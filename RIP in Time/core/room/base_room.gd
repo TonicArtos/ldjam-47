@@ -38,6 +38,7 @@ signal pickup_item(item_id)
 
 func _enter_player(player: PlayerState):
 	add_child(player)
+	player.change_state("idle")
 	move_child(camera, get_child_count())
 	self.player = player
 	player.connect("drop_item", self, "_on_drop_item")

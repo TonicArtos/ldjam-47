@@ -26,6 +26,8 @@ texture = ExtResource( 1 )
 
 [node name="BgDoor" parent="." instance=ExtResource( 3 )]
 position = Vector2( 216, 372 )
+is_unlocked = true
+is_axe_door = true
 
 [node name="Reactor" parent="." instance=ExtResource( 2 )]
 position = Vector2( 544, 352 )
