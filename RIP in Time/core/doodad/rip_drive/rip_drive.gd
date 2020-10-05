@@ -64,4 +64,3 @@ func get_dialogue(id: int, item):
 			else:
 				r = dialogues[7]
 	return r
-

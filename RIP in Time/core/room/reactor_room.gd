@@ -24,7 +24,7 @@ func get_dialogue(id: int, item):
 
 func _ready():
 	$LinkDoor.connect("entered_door", self, "_queue_enter_room")
-	$Reactor.connect("contaminant released", self, "_contaminant_released")
+	$Reactor.connect("contaminant_released", self, "_contaminant_released")
 	$Reactor.connect("used_key", self, "_used_item")
 
 func _contaminant_released():

@@ -80,6 +80,11 @@ _global_script_classes=[ {
 "path": "res://core/player/player_states.gd"
 }, {
 "base": "Node2D",
+"class": "Reactor",
+"language": "GDScript",
+"path": "res://core/doodad/reactor/reactor.gd"
+}, {
+"base": "Node2D",
 "class": "RipDrive",
 "language": "GDScript",
 "path": "res://core/doodad/rip_drive/rip_drive.gd"
@@ -124,6 +129,7 @@ _global_script_class_icons={
 "PlayerInput": "",
 "PlayerState": "",
 "PlayerStates": "",
+"Reactor": "",
 "RipDrive": "",
 "RoomCamera": "",
 "State": "",

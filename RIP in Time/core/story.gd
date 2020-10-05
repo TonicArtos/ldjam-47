@@ -219,7 +219,7 @@ RIQ\"sequeoce loaded. Oinfirm""",
 	
 	"rip comp opt 2": """Send an object""",
 
-	"reactor terminale message": """Access to reactor terminal granted! What would you like to do?
+	"reactor terminal message": """Access to reactor terminal granted! What would you like to do?
 	Power up the reactor -> already on! Cannot.
 	Power down the reactor -> reactor powers down""",
 	
@@ -262,6 +262,32 @@ RIQ\"sequeoce loaded. Oinfirm""",
 	"alishia doil good end": """“There’s something wrong. Too many people are having strange experiences while in cryo. Maybe the chambers are malfunctioning? I guess the medic techs will handle it. I need to get back to working on the black hole idea.”""",
 
 	"alisha doil bad end": "“Don’t bother me. The void calls.”",
+	
+	##################################################
+	
+	"reactor greeting": """reactor greeting
+	TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO 
+	""",
+	
+	"maintenance denied": """maintenance denied
+	TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO 
+	""",
+	
+	"maintenance approved": """maintenance approved
+	TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO 
+	""",
+	
+	"key inserted": """key inserted
+	TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO 
+	""",
+	
+	"monster released": """monster released
+	TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO 
+	""",
+	
+	"stabilise reaction": """stabilise reaction
+	TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO 
+	""",
 }
 
 static func default_done() -> Option:
