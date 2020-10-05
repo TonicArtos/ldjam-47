@@ -215,15 +215,22 @@ RIQ\"sequeoce loaded. Oinfirm""",
 	Power up the reactor -> already on! Cannot.
 	Power down the reactor -> reactor powers down""",
 	
+	"rip drive final": """R.I.P. Drive activated. Recursion engine spinning up. Continuum synchronisation complete. Entangling quantum blockchain. Preparing to project in 10...9...""",
+	
+	#from robot
+	
+	#Condition: no crew awakened, robot alive
 	"incident report good": """INCIDENT REPORT
 	CATEGORY: NEAR MISS
 	According to records, this is the third time a void contaminant has been found in the reactor after a RIP jump. Thankfully, there was no physical damage to the ship or its occupants. What is causing these incidents? Is the Health and Safety team even reading these reports?""",
 	
+	#some crew awakened, robot alive
 	"incident report bad": """INCIDENT REPORT
 	CATEGORY: PSYCHOLOGICAL INJURY
 
 	According to records, this is the third time a void contaminant has been found in the reactor after a RIP jump. Thankfully, there was no physical damage to the ship or its occupants, though several human crew members have developed severe void dementia. They were put into cryo-sleep and delivered to health care facilities at the recent planetside rendezvous. What is causing these incidents? Is the Health and Safety team even reading these reports?""",
-
+	
+	#robot dead
 	"robot dead end": """-- memory chip not found --
 	-- qubit core not found --
 	-- superdeep logic module not found --

@@ -31,6 +31,7 @@ var dialogues = {
 	5 : Story.Message.new("remove battery", [Story.Option.new(0, "back")]),
 	6 : Story.Message.new("inspect rip drive battery gone", [Story.Option.new(0, "back")]),
 	7 : Story.Message.new("already carrying item", [Story.Option.new(0, "back")]),
+	10 : Story.Message.new("rip drive final", [Story.default_done()]),
 }
 
 func get_dialogue(id: int, item):
