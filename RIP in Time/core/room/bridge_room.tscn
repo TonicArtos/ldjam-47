@@ -26,6 +26,7 @@ __meta__ = {
 position = Vector2( 104, 380 )
 destination_room = "CabinRoom"
 from_room = "BridgeRoom"
+sprite_suffix = "bridge"
 
 [node name="LinkDoor" parent="." instance=ExtResource( 2 )]
 position = Vector2( 860, 380 )
@@ -33,6 +34,7 @@ is_unlocked = true
 is_axe_door = true
 destination_room = "LinkRoom"
 from_room = "BridgeRoom"
+sprite_suffix = "bridge"
 
 [node name="Room" type="Sprite" parent="."]
 position = Vector2( 480, 292 )
