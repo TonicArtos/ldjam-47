@@ -16,7 +16,10 @@ func get_dialogue(id: int, item):
 	
 	var r = dialogues[id]
 	if id == 0 and item != null:
-		r.options.push_front(item.get_look_at_option())
+		r.options = [
+			item.get_look_at_option(),
+			Story.default_done(),
+		]
 	return r
 
 func _ready():

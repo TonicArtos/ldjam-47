@@ -29,7 +29,7 @@ const text = {
 
 	"operate rip drive": "You start the rip sequence to head back to civilisation and the RIP Drive thrums to life, but something seems to be wrong. The radio signal appears to have modified its programming. A tiny rip in space tears open before you as you hear the ship's reactor containment alarm begin to sound.",
 	
-	"look at ripdrive": "The R.I.P. Drive™.",
+	"rip drive running": "The RIP drive terminal doesn't respond. The modification must have blown its logic circuits once it started the RIP operation.",
 	
 	"already carrying item": "You are already carrying an item",
 	
