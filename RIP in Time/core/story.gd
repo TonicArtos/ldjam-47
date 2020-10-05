@@ -217,20 +217,30 @@ RIQ\"sequeoce loaded. Oinfirm""",
 	
 	"rip drive final": """R.I.P. Drive activated. Recursion engine spinning up. Continuum synchronisation complete. Entangling quantum blockchain. Preparing to project in 10...9...""",
 	
-	#from robot
+	"reactor greeting": """Welcome to the reactor terminal! What would you like to do?
+	""",
 	
-	#Condition: no crew awakened, robot alive
+	"maintenance denied": """Access denied.""",
+	
+	"maintenance approved": """Maintenance mode enabled.""",
+	
+	"key inserted": """Security key accepted. Access granted.""",
+	
+	"monster released": """Congratulations! You have cleared the contaminant from the reactor.""",
+	
+	"stabilise reaction": """Reactor status: stable""",
+}
+
+const endings = {
 	"incident report good": """INCIDENT REPORT
 	CATEGORY: NEAR MISS
 	According to records, this is the third time a void contaminant has been found in the reactor after a RIP jump. Thankfully, there was no physical damage to the ship or its occupants. What is causing these incidents? Is the Health and Safety team even reading these reports?""",
 	
-	#some crew awakened, robot alive
 	"incident report bad": """INCIDENT REPORT
 	CATEGORY: PSYCHOLOGICAL INJURY
 
 	According to records, this is the third time a void contaminant has been found in the reactor after a RIP jump. Thankfully, there was no physical damage to the ship or its occupants, though several human crew members have developed severe void dementia. They were put into cryo-sleep and delivered to health care facilities at the recent planetside rendezvous. What is causing these incidents? Is the Health and Safety team even reading these reports?""",
 	
-	#robot dead
 	"robot dead end": """-- memory chip not found --
 	-- qubit core not found --
 	-- superdeep logic module not found --
@@ -251,31 +261,15 @@ RIQ\"sequeoce loaded. Oinfirm""",
 	"steve lowry bad end": """“The cucumber-- It's after us!”""",
 	
 	"jonie hoff good end": """“Forget what I said about quitting finance. The latest ripcoin haul was MASSIVE. I'm buying a yacht and one of those cute robotic poodles with Daisy's memories built into it. Then I'm going into solo consulting. Five year plan, here I come!”""",
-
 	"jonie off bad end": """“Have you seen the endless black abyss?”""",
 	
-	"reddy koppel good end": """“If we stop for maintenance now, that’s two RIP jumps lost. NO ONE is going to be happy about that, not the higher ups and not the crew. It's been okay so far, so the ship will hang on a little longer.”""",
+	"reddy koppel good end": """If we stop for maintenance now, that’s two RIP jumps lost. NO ONE is going to be happy about that, not the higher ups and not the crew. It's been okay so far, so the ship will hang on a little longer.""",
 	
-	"reddy kopel bad end": """“Alone in space, alone in space.”""",
+	"reddy koppel bad end": """Alone in space, alone in space.""",
 	
 	"alishia doil good end": """“There's something wrong. Too many people are having strange experiences while in cryo. Maybe the chambers are malfunctioning? I guess the medic techs will handle it. I need to get back to working on the black hole idea.”""",
 
 	"alisha doil bad end": "“Don't bother me. The void calls.”",
-	
-	##################################################
-	
-	"reactor greeting": """Welcome to the reactor terminal! What would you like to do?
-	""",
-	
-	"maintenance denied": """Access denied.""",
-	
-	"maintenance approved": """Maintenance mode enabled.""",
-	
-	"key inserted": """Security key accepted. Access granted.""",
-	
-	"monster released": """Congratulations! You have cleared the contaminant from the reactor.""",
-	
-	"stabilise reaction": """Reactor status: stable""",
 }
 
 static func default_done() -> Option:

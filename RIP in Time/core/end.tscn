@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://core/end.gd" type="Script" id=1]
+[ext_resource path="res://core/robot_ending.gd" type="Script" id=3]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -16,68 +17,33 @@ __meta__ = {
 [node name="Control" type="Control" parent="."]
 margin_right = 960.0
 margin_bottom = 640.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="Control"]
-margin_right = 960.0
-margin_bottom = 640.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer"]
-margin_left = 443.0
-margin_top = 250.0
-margin_right = 516.0
-margin_bottom = 390.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Title" type="Label" parent="Control/CenterContainer/VBoxContainer"]
-margin_right = 73.0
-margin_bottom = 14.0
+[node name="Title" type="Label" parent="Control"]
+margin_left = 444.0
+margin_top = 14.0
+margin_right = 517.0
+margin_bottom = 28.0
 text = "RIP in Time"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="person1" type="Label" parent="Control/CenterContainer/VBoxContainer"]
-margin_top = 18.0
-margin_right = 73.0
-margin_bottom = 32.0
-
-[node name="person2" type="Label" parent="Control/CenterContainer/VBoxContainer"]
-margin_top = 36.0
-margin_right = 73.0
-margin_bottom = 50.0
-
-[node name="person3" type="Label" parent="Control/CenterContainer/VBoxContainer"]
-margin_top = 54.0
-margin_right = 73.0
-margin_bottom = 68.0
-
-[node name="person4" type="Label" parent="Control/CenterContainer/VBoxContainer"]
-margin_top = 72.0
-margin_right = 73.0
-margin_bottom = 86.0
-
-[node name="person5" type="Label" parent="Control/CenterContainer/VBoxContainer"]
-margin_top = 90.0
-margin_right = 73.0
-margin_bottom = 104.0
-
-[node name="person6" type="Label" parent="Control/CenterContainer/VBoxContainer"]
-margin_top = 108.0
-margin_right = 73.0
-margin_bottom = 122.0
-
-[node name="person7" type="Label" parent="Control/CenterContainer/VBoxContainer"]
-margin_top = 126.0
-margin_right = 73.0
-margin_bottom = 140.0
+[node name="Body" type="Label" parent="Control"]
+margin_left = 184.0
+margin_top = 46.0
+margin_right = 784.0
+margin_bottom = 128.0
+size_flags_vertical = 8
+text = "INCIDENT REPORT
+	CATEGORY: NEAR MISS
+	According to records, this is the third time a void contaminant has been found in the reactor after a RIP jump. Thankfully, there was no physical damage to the ship or its occupants. What is causing these incidents? Is the Health and Safety team even reading these reports?"
+align = 1
+valign = 1
+autowrap = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
