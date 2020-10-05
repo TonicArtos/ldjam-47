@@ -30,8 +30,9 @@ func _ready():
 	$RipDriveTerminal.connect("picked_up_battery", self, "_picked_up_battery")
 	$LinkDoor.connect("entered_door", self, "_queue_enter_room")
 	$LinkDoor.connect("used_battery", self, "_used_item")
+	$MonsterTimer.connect("timeout", self, "_spawn_monster")
 	if get_parent().monster_unleashed and not get_parent().monster_digesting:
-		$MonsterTimer.start(7)
+		$MonsterTimer.start(4)
 
 func _exit_tree():
 	pass
@@ -73,21 +74,28 @@ func _message_from_the_future():
 		$Dialogue.start(self, player, 1)
 
 func _rip_opened():
-	var boom_timer = get_parent().get_node("BoomTimer")
-	boom_timer.stop()
-	boom_timer.start(10)
-	camera.start_shake(1, 0.02, 3)
-	camera.start_flash(0.15, 0.8, 0.15)
-	var rip_effect = RipEffect.instance()
-	rip_effect.set_position(Vector2(640, 266))
-	add_child(rip_effect)
-	move_child(camera, get_child_count())
-	rip_effect.only_once = false
-	rip_effect.play()
-	yield(get_tree().create_timer(4), "timeout")
-	camera.start_shake(1, 0.02, 1)
-	yield(get_tree().create_timer(4), "timeout")
-	camera.start_shake(1, 0.02, 1)
+	if get_parent().monster_unleashed:
+		var boom_timer = get_parent().get_node("BoomTimer")
+		boom_timer.stop()
+		boom_timer.start(10)
+		yield(get_tree().create_timer(5), "timeout")
+		camera.start_shake(1, 0.01, 5)
+	else:
+		var boom_timer = get_parent().get_node("BoomTimer")
+		boom_timer.stop()
+		boom_timer.start(10)
+		camera.start_shake(1, 0.02, 3)
+		camera.start_flash(0.15, 0.8, 0.15)
+		var rip_effect = RipEffect.instance()
+		rip_effect.set_position(Vector2(640, 266))
+		add_child(rip_effect)
+		move_child(camera, get_child_count())
+		rip_effect.only_once = false
+		rip_effect.play()
+		yield(get_tree().create_timer(4), "timeout")
+		camera.start_shake(1, 0.02, 1)
+		yield(get_tree().create_timer(4), "timeout")
+		camera.start_shake(1, 0.02, 1)
 
 func _key_thrown():
 	get_parent().key_fob_delivered = true

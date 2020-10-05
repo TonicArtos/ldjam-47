@@ -10,7 +10,7 @@ export(String) var human_name
 export(String) var journal_entry
 export(bool) var is_active
 
-signal capsule_activate(human_name)
+signal occupant_waking_up(human_name)
 
 func _process(delta):
 	if Engine.editor_hint:
@@ -41,5 +41,5 @@ func get_dialogue(id: int, item):
 		2:
 			r = dialogues[2]
 			is_active = true
-			emit_signal("capsule_activate", human_name)
+			emit_signal("occupant_waking_up", human_name)
 	return r

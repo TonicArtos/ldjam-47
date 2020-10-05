@@ -43,11 +43,14 @@ func get_dialogue(id: int, item):
 			r = dialogues[0]
 		1, 3:
 			is_running = true
-			r = dialogues[id]
-			if item != null and item.get_item_type() == "key fob":
-				r.options = [Story.Option.new(2, "throw key"), Story.default_done()]
+			if id == 1 and get_parent().get_parent().monster_unleashed:
+				r = dialogues[10]
 			else:
-				r.options = [Story.default_done()]
+				r = dialogues[id]
+				if item != null and item.get_item_type() == "key fob":
+					r.options = [Story.Option.new(2, "throw key"), Story.default_done()]
+				else:
+					r.options = [Story.default_done()]
 			emit_signal("rip_operated")
 		2:
 			r = dialogues[2]

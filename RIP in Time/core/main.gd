@@ -3,8 +3,9 @@ extends Node2D
 var key_fob_delivered = false
 var rip_completed = false
 var player_died = false
-var monster_unleashed = false
+var monster_unleashed = true
 var monster_digesting = false
+var occupants_waking = []
 
 const RipDriveRoom = preload("res://core/room/rip_drive_room.tscn")
 const LinkRoom = preload("res://core/room/link_room.tscn")
@@ -29,7 +30,7 @@ var stored_rooms = {}
 func _ready():
 	$BoomTimer.connect("timeout", self, "_on_boom")
 	#_start_loop()
-	_test_room("ReactorRoom", "LinkRoom")
+	_test_room("RipDriveRoom", "LinkRoom")
 
 func _on_player_died():
 	print("here")
@@ -42,28 +43,28 @@ func _on_player_died():
 	yield(get_tree().create_timer(3), "timeout")
 	if not rip_completed:
 		_start_loop()
-		monster_unleashed = false
-		monster_digesting = false
 	else:
 		player_died = true
 		_end_screen()
 
-func _on_final_rip():
-	_end_screen()
-
 func _on_boom():
-	var dialogue = current_room.get_node("Dialogue")
-	if dialogue != null:
-		dialogue.queue_free()
-	camera.start_shake(1, 0.02, BOOM_DELAY + BOOM_WHITE_OUT_SPEED * 4)
-	camera.start_flash(0.15, 0.8, 0.15)
-	yield(get_tree().create_timer(1), "timeout")
-	camera.white_out(BOOM_WHITE_OUT_SPEED)
-	yield(get_tree().create_timer(0.2), "timeout")
-	$AudioStreamPlayer.stop()
-	camera.fade_out(0.1)
-	yield(get_tree().create_timer(2), "timeout")
-	_start_loop()
+	if monster_unleashed:
+		$AudioStreamPlayer.stop()
+		camera.fade_out(1)
+		_end_screen()
+	else:
+		var dialogue = current_room.get_node("Dialogue")
+		if dialogue != null:
+			dialogue.queue_free()
+		camera.start_shake(1, 0.02, BOOM_DELAY + BOOM_WHITE_OUT_SPEED * 4)
+		camera.start_flash(0.15, 0.8, 0.15)
+		yield(get_tree().create_timer(1), "timeout")
+		camera.white_out(BOOM_WHITE_OUT_SPEED)
+		yield(get_tree().create_timer(0.2), "timeout")
+		$AudioStreamPlayer.stop()
+		camera.fade_out(0.1)
+		yield(get_tree().create_timer(2), "timeout")
+		_start_loop()
 
 func _test_room(room: String, from: String):
 	camera = RoomCamera.instance()
@@ -76,6 +77,9 @@ func _test_room(room: String, from: String):
 	_enter_room(room, from, player)
 
 func _start_loop():
+	monster_unleashed = false
+	monster_digesting = false
+	occupants_waking = []
 	camera = RoomCamera.instance()
 	player = Player.instance()
 	player.connect("died", self, "_on_player_died")

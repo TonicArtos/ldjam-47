@@ -95,3 +95,6 @@ func remove_child(node: Node):
 	.remove_child(node)
 	if node.has_method("is_camera"):
 		camera = null
+
+func _occupant_waking(name):
+	get_parent().occupants_waking.append(name)
