@@ -43,9 +43,11 @@ func _ready():
 	$ReactorDoor.connect("entered_door", self, "_queue_enter_room")
 	$ReactorDoor.connect("used_axe", self, "_used_item")
 	$MonsterTimer.connect("timeout", self, "_spawn_monster")
+
+func _enter_tree():
 	if get_parent().monster_unleashed:
-		$MonsterTimer.start(7)
-	
+		$MonsterTimer.start(4)
+
 func _used_battery():
 	player.carried_item = null
 

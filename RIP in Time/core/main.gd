@@ -13,6 +13,7 @@ const BridgeRoom = preload("res://core/room/bridge_room.tscn")
 const ReactorRoom = preload("res://core/room/reactor_room.tscn")
 const Player = preload("res://core/player/player.tscn")
 const RoomCamera = preload("res://core/camera/room_camera.tscn")
+const EndScreen = preload("res://core/end.tscn")
 
 const BOOM_TIME: int = 168 #seconds
 #const BOOM_TIME: int = 5 #seconds
@@ -31,6 +32,7 @@ func set_monster_unleashed(val):
 	monster_unleashed = val
 	$AudioStreamPlayer.stop()
 	$AudioStreamPlayer2.play()
+	$BoomTimer.stop()
 
 func _ready():
 	$BoomTimer.connect("timeout", self, "_on_boom")
@@ -141,5 +143,14 @@ func _enter_room(room: String, from: String, player: PlayerState):
 	current_room.enter_from(from, player, true)
 
 func _end_screen():
-	#TODOODODODOD
+	current_room.disconnect("go_to_room", self, "_enter_room")
+	current_room.remove_child(player)
+	current_room.remove_child(camera)
+	remove_child(current_room)
+	var end = EndScreen.instance()
+	end.player_died = player_died
+	end.occupants_waking = occupants_waking
+	add_child(end)
+	current_room.add_child(camera)
+	camera.fade_in(FADE_SPEED)
 	pass

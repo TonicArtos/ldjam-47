@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://gfx/room/room4/Room_4_Graphic_v2.png" type="Texture" id=1]
 [ext_resource path="res://core/doodad/reactor/reactor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://core/doodad/bg_door/bg_door.tscn" type="PackedScene" id=3]
-[ext_resource path="res://core/camera/room_camera.tscn" type="PackedScene" id=4]
 [ext_resource path="res://core/room/reactor_room.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -44,6 +43,3 @@ shape = SubResource( 1 )
 [node name="RightWall" type="CollisionShape2D" parent="Boundary"]
 position = Vector2( 828, 380 )
 shape = SubResource( 1 )
-
-[node name="Camera" parent="." instance=ExtResource( 4 )]
-visible = false

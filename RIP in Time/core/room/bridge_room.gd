@@ -31,8 +31,10 @@ func _ready():
 	$LinkDoor.connect("entered_door", self, "_queue_enter_room")
 	$Computer.connect("picked_up_key", self, "_picked_up_key")
 	$MonsterTimer.connect("timeout", self, "_spawn_monster")
-	if get_parent().monster_unleashed and not get_parent().monster_digesting:
-		$MonsterTimer.start(7)
+
+func _enter_tree():
+	if get_parent().monster_unleashed:
+		$MonsterTimer.start(3)
 
 func _spawn_monster():
 	var monster = Monster.instance()
