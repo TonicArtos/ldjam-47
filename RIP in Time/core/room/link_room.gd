@@ -1,5 +1,7 @@
 extends BaseRoom
 
+const Monster = preload("res://core/monster/monster_right.tscn")
+
 func enter_from(from: String, player: PlayerState, animate_door: bool = false):
 	_enter_player(player)
 	player.change_state("idle")
@@ -40,6 +42,15 @@ func _ready():
 	$RipDoor.connect("entered_door", self, "_queue_enter_room")
 	$ReactorDoor.connect("entered_door", self, "_queue_enter_room")
 	$ReactorDoor.connect("used_axe", self, "_used_item")
+	$MonsterTimer.connect("timeout", self, "_spawn_monster")
+	if get_parent().monster_unleashed:
+		$MonsterTimer.start(7)
 	
 func _used_battery():
 	player.carried_item = null
+
+func _spawn_monster():
+	var monster = Monster.instance()
+	monster.position = LEFT_ENTER_POS
+	add_child(monster)
+	move_child(camera, get_child_count())

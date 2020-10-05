@@ -1,6 +1,10 @@
 extends Node2D
 
 var key_fob_delivered = false
+var rip_completed = false
+var player_died = false
+var monster_unleashed = false
+var monster_digesting = false
 
 const RipDriveRoom = preload("res://core/room/rip_drive_room.tscn")
 const LinkRoom = preload("res://core/room/link_room.tscn")
@@ -27,6 +31,26 @@ func _ready():
 	#_start_loop()
 	_test_room("ReactorRoom", "LinkRoom")
 
+func _on_player_died():
+	print("here")
+	var dialogue = current_room.get_node("Dialogue")
+	if dialogue != null:
+		dialogue.queue_free()
+	$AudioStreamPlayer.stop()
+	yield(get_tree().create_timer(1), "timeout")
+	camera.fade_out(2)
+	yield(get_tree().create_timer(3), "timeout")
+	if not rip_completed:
+		_start_loop()
+		monster_unleashed = false
+		monster_digesting = false
+	else:
+		player_died = true
+		_end_screen()
+
+func _on_final_rip():
+	_end_screen()
+
 func _on_boom():
 	var dialogue = current_room.get_node("Dialogue")
 	if dialogue != null:
@@ -44,6 +68,7 @@ func _on_boom():
 func _test_room(room: String, from: String):
 	camera = RoomCamera.instance()
 	player = Player.instance()
+	player.connect("died", self, "_on_player_died")
 	current_room = RipDriveRoom.instance()
 	add_child(current_room)
 	current_room.add_child(camera)
@@ -53,6 +78,7 @@ func _test_room(room: String, from: String):
 func _start_loop():
 	camera = RoomCamera.instance()
 	player = Player.instance()
+	player.connect("died", self, "_on_player_died")
 	remove_child(current_room)
 	current_room = RipDriveRoom.instance()
 	stored_rooms = {}
@@ -101,3 +127,7 @@ func _enter_room(room: String, from: String, player: PlayerState):
 	current_room.connect("go_to_room", self, "_enter_room")
 	camera.fade_in(FADE_SPEED)
 	current_room.enter_from(from, player, true)
+
+func _end_screen():
+	#TODOODODODOD
+	pass

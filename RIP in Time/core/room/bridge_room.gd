@@ -1,5 +1,7 @@
 extends BaseRoom
 
+const Monster = preload("res://core/monster/monster_left.tscn")
+
 func enter_from(from: String, player: PlayerState, animate_door: bool = false):
 	_enter_player(player)
 	match from:
@@ -28,3 +30,12 @@ func _ready():
 	$Gun.connect("picked_up_gun", self, "_picked_up_gun")
 	$LinkDoor.connect("entered_door", self, "_queue_enter_room")
 	$Computer.connect("picked_up_key", self, "_picked_up_key")
+	$MonsterTimer.connect("timeout", self, "_spawn_monster")
+	if get_parent().monster_unleashed and not get_parent().monster_digesting:
+		$MonsterTimer.start(7)
+
+func _spawn_monster():
+	var monster = Monster.instance()
+	monster.position = RIGHT_ENTER_POS
+	add_child(monster)
+	move_child(camera, get_child_count())

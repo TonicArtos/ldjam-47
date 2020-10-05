@@ -1,6 +1,7 @@
 extends BaseRoom
 
-const Monster = preload("res://core/item/battery/battery.tscn")
+const Monster = preload("res://core/monster/monster_left.tscn")
+const MONSTER_START = Vector2(580, 180)
 
 func enter_from(from: String, player: PlayerState, animate_door: bool = false):
 	_enter_player(player)
@@ -31,4 +32,7 @@ func _ready():
 
 func _contaminant_released():
 	get_parent().monster_unleashed = true
-	pass
+	var monster = Monster.instance()
+	monster.position = MONSTER_START
+	add_child(monster)
+	move_child(camera, get_child_count())

@@ -74,3 +74,6 @@ shape = SubResource( 1 )
 
 [node name="Camera" parent="." instance=ExtResource( 4 )]
 visible = false
+
+[node name="MonsterTimer" type="Timer" parent="."]
+one_shot = true

@@ -6,7 +6,7 @@ const LEFT = Vector2(-1, 0)
 const RIGHT = Vector2(1, 0)
 
 var change_state_callback
-var animated_sprite
+var animated_sprite: AnimatedSprite
 var pstate : KinematicBody2D
 
 signal interact()
