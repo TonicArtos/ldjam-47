@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://gfx/effect/flash_tile.png" type="Texture" id=1]
-[ext_resource path="res://core/camera/camera_shake.gd" type="Script" id=2]
+[ext_resource path="res://core/camera/room_camera.gd" type="Script" id=2]
 [ext_resource path="res://gfx/effect/fade_tile.png" type="Texture" id=3]
 
-[node name="Camera2D" type="Camera2D"]
+[node name="RoomCamera" type="Camera2D"]
 anchor_mode = 0
 current = true
 script = ExtResource( 2 )
@@ -26,3 +26,5 @@ one_shot = true
 [node name="ShakePeriod" type="Timer" parent="."]
 
 [node name="Tweener" type="Tween" parent="."]
+
+[node name="Node2D" type="Node2D" parent="."]

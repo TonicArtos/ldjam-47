@@ -4,7 +4,6 @@ class_name RoomCamera
 
 onready var shake_length = $ShakeLength
 onready var shake_period = $ShakePeriod
-onready var flash_period = $FlashPeriod
 onready var tweener = $Tweener
 onready var flash_image = $FlashSprite
 onready var fade_image = $FadeSprite
@@ -13,6 +12,9 @@ var reset_speed = 0
 var strength = 0
 var flash_strength = 0.7
 var is_shaking = false
+
+func is_camera():
+	pass
 
 func _ready():
 	shake_length.connect("timeout", self, "_on_timeout_shake")

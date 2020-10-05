@@ -1,7 +1,5 @@
 extends Node2D
 
-const _KeyFobItem = preload("res://core/item/key_fob/key_fob.gd")
-
 class_name RipDrive
 
 func is_doodad():
@@ -18,8 +16,8 @@ var dialogues = {
 	0 : Story.Message.new(
 		"rip drive", 
 		[
-			Story.Option.new(1, "confirm"),
 			Story.Option.new(4, "inspect"),
+			Story.Option.new(1, "confirm"),
 			Story.default_done(),
 		]
 	),

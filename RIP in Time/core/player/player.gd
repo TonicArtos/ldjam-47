@@ -11,7 +11,7 @@ var velocity = Vector2()
 var direction = State.RIGHT
 var _doodads_overlapping := []
 var _items_overlapping := []
-var carried_item = Axe.instance()
+var carried_item = null
 
 signal interact_with(target)
 signal drop_item(item)
@@ -25,6 +25,8 @@ func _ready():
 	set_physics_process(true)
 	state_factory = PlayerStates.new()
 	change_state("use")
+
+func _enter_tree():
 	$InteractArea.connect("area_entered", self, "_area_entered")
 	$InteractArea.connect("area_exited", self, "_area_exited")
 	get_parent().connect("interact_complete", self, "_on_interaction_complete")

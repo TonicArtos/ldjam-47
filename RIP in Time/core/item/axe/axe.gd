@@ -1,6 +1,6 @@
 extends Area2D
 
-const FLOOR_POSITION = 428
+const FLOOR_POSITION = 442
 
 func is_item():
 	pass

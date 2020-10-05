@@ -8,6 +8,7 @@
 extents = Vector2( 12, 28 )
 
 [node name="Sprite" type="Sprite"]
+rotation = 1.5708
 texture = ExtResource( 2 )
 script = ExtResource( 1 )
 

@@ -11,7 +11,13 @@ const text = {
 	A security fob falls to the ground from an unusual rip in the fabric of reality.
 	""",
 	
-	"look at room1": "This is the R.I.P. Drive room. You are tasked with the regular maintainence of the drive, though nobody saw fit to ever inform you of how it works.",
+	"look at rip room": "This is the R.I.P. Drive room. For more than 40 years you have been tasked with the regular maintainence of the drive, though nobody saw fit to ever inform you of how it actually works.",
+	
+	"look at link room": "Cryo-pods line the walls. The bodies of the crew are barely visible behind the layers of glass and super-chilled gas.",
+	
+	"look at bridge room": "The bridge is the nerve center of ship. Though the real work happens on the far side of the crew cabins where the machine shop is. Not to mention the four kilometre long ripcoin harvesters dangling from the tiny habitation module.",
+	
+	"look at reactor room": "This is the R.I.P. Drive room. You are tasked with the regular maintainence of the drive, though nobody saw fit to ever inform you of how it works.",
 	
 	"throw key": "You throw the key into the rip. As the key vanishes, the sound of a distant explosion assaults your sensors.",
 	
@@ -81,8 +87,40 @@ const text = {
 
 	I’ve been thinking about it, and there’s probably a more efficient way to mine ripcoins if the RIP drive is close to a binary black hole system, especially if the black holes have a rapid orbit around one another. Gravitational forces might be a problem. Will look into this later.""",
 
-	"common room door status": """EMERGENCY LOCK ACTIVATED
+	"battery door status": """EMERGENCY LOCK ACTIVATED
 	CONDITION 8: SUDDEN LOSS OF CABIN PRESSURE""",
+	
+	"battery door status unlocked": """EMERGENCY LOCK ACTIVATED
+	
+	CONDITION 8: SUDDEN LOSS OF CABIN PRESSURE
+	
+	ERROR: LOCK NON_RESPONSIVE. THIS DOOR MAY NOT FUNCTION AS INTENDED.""",
+	
+	"open battery door unlocked": """The door emits sparks and a little smoke as it opens, but nothing else untoward happens and you trundle through.""",
+	
+	"apply battery to door": """You press the battery terminals to the door pad and hold down the battery's emergency discharge button. A bolt of electricity leaps across the keypad and door frame as the \"power of the sun\" is unleashed. After a moment, smoke belches from the key pad and the door groans. On the door pad, a lock symbol flashes for a moment before finally fading away.""",
+	
+	"axe door status": """EMERGENCY LOCK ACTIVATED
+	CONDITION 8: SUDDEN LOSS OF CABIN PRESSURE""",
+	
+	"axe door status unlocked": """EMERGENCY LOCK ACTIVATED
+	
+	CONDITION 8: SUDDEN LOSS OF CABIN PRESSURE
+	
+	A fire axe has been jammed into the mechanism and is propping the door open.""",
+	
+	"open axe door unlocked": """You grasp the door and pull it high enough to lever yourself through the gap. after you pass through, the door crunches down onto the axe driving it further into the door's mechanism.""",
+	
+	"apply axe to door": """You wedge the fire axe into the base of the door, enough to get your single Xenotron Manipulator Mark V (patent pending) in the crack. You use your superior robot strength to lever the door open and search for a way to keep it like that. Your servos scream as you manage to shoulder your way under the door and take its weight. You try to grab the axe, but in the struggle it has somehow wedged into the door's mechanism. You manage to adjust it somewhat to keep the door propped open, making passing through the door a little easier.""",
+	
+	"cabin door status": """EMERGENCY LOCK ACTIVATED
+	CONDITION 8: SUDDEN LOSS OF CABIN PRESSURE
+	
+	A crew member has written in marker on the door.
+	
+	\"No ROBOTS admitted without human supervision!\"""",
+	
+	"open door locked": """The door won't open.""",
 
 	"bridge door status": """EMERGENCY LOCK ACTIVATED
 	CONDITION 8: SUDDEN LOSS OF CABIN PRESSURE""",
@@ -90,7 +128,11 @@ const text = {
 	"reactor room door status": """EMERGENCY LOCK ACTIVATED
 	CONDITION 8: SUDDEN LOSS OF CABIN PRESSURE""",
 
-	"fire axe cabinet message": """In case of emergency, break glass.""",
+	"axe holder with axe": """In case of emergency, break glass. Behind the glass is a fire axe.""",
+	
+	"axe holder without axe": """The fire axe cabinet's glass has been smashed in.""",
+	
+	"take axe": """You smash the glass and take the axe from inside. A human might have worried about cuts from the glass shards, but they don't even leave a mark on your dull metal exterior.""",
 	
 	"carrying axe": """You are carrying a fire axe. On it is written.
 	
