@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://core/item/key_fob/key_fob.gd" type="Script" id=1]
+[ext_resource path="res://core/item/battery/battery.gd" type="Script" id=1]
 [ext_resource path="res://gfx/items/battery/Battery_Graphic.png" type="Texture" id=2]
 [ext_resource path="res://core/item/item.gd" type="Script" id=3]
 

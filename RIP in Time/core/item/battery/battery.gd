@@ -5,6 +5,9 @@ const FLOOR_POSITION = 442
 func is_item():
 	pass
 
+func get_item_type():
+	return "battery"
+
 var dialogues = {
 	0 : Story.Message.new(
 		"look at battery", 
@@ -15,7 +18,7 @@ var dialogues = {
 	),
 	1 : Story.Message.new("pick up battery", [Story.default_done()]),
 	2 : Story.Message.new("already carrying item", [Story.default_done()]),
-	90 : Story.Message.new("carrying battery", [Story.Option.new(99, "drop"), Story.default_done()]),
+	90 : Story.Message.new("carrying battery", [Story.default_drop(), Story.default_done()]),
 }
 
 func get_dialogue(id: int, item):

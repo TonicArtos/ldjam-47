@@ -15,17 +15,18 @@ func get_dialogue(id: int, item):
 		return item.get_dialogue(id, item)
 	
 	var r = dialogues[id]
-	if id == 0 and item != null:
-		r.options = [
-			item.get_look_at_option(),
-			Story.default_done(),
-		]
+	if id == 0:
+		if item != null:
+			r.options = [item.get_look_at_option(), Story.default_done()]
+		else:
+			r.options = [Story.default_done()]
 	return r
 
 func _ready():
 	$RipTimer.connect("timeout", self, "_message_from_the_future")
 	$RipDriveTerminal/RipDriveTerminal/Interactable.connect("rip_operated", self, "_rip_opened")
 	$RipDriveTerminal/RipDriveTerminal/Interactable.connect("key_thrown_in_rip", self, "_key_thrown")
+	$RipDriveTerminal/RipDriveTerminal/Interactable.connect("picked_up_battery", self, "_picked_up_battery")
 
 func start_intro():
 	player.change_state("intro")

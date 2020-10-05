@@ -31,6 +31,15 @@ const text = {
 	
 	"rip drive running": "The RIP drive terminal doesn't respond. The modification must have blown its logic circuits once it started the RIP operation.",
 	
+	"inspect rip drive": "You were tasked with maintaining the drive, but nobody ever told you how. You give the body of the device a good look over anyway. It would appear that the strange vibration earlier has not affected it. You notice there is a auxiliary battery plugged in.",
+	
+	"remove battery": """You remove the battery from its socket. On it is written.
+	
+	Mini-Fuse 5778K
+	“The power of the Sun in the palm of your hand.”""",
+	
+	"inspect rip drive battery gone": """You were tasked with maintaining the drive, but nobody ever told you how. You give the body of the device a good look over anyway. It would appear that the strange vibration earlier has not affected it. The socket for the auxiliary battery is now empty.""",
+	
 	"already carrying item": "You are already carrying an item",
 	
 	"anfelice gray journal": """ANFELICE GRAY

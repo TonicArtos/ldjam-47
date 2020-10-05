@@ -10,3 +10,6 @@ func get_dialogue(id: int, item):
 
 func get_look_at_option():
 	return $Interactable.get_look_at_option()
+
+func get_item_type():
+	return $Interactable.get_item_type()

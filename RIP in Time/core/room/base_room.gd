@@ -9,12 +9,17 @@ const Axe = preload("res://core/item/axe/axe.tscn")
 const Gun = preload("res://core/item/gun/gun.tscn")
 const Battery = preload("res://core/item/battery/battery.tscn")
 
-var items = {
-#	"key": KeyItem,
-#	"battery": BatteryItem,
-#	"axe": AxeItem,
-#	"sag9000": Sag9kItem,
-}
+func _picked_up_battery():
+	player.carried_item = Battery.instance()
+
+func _picked_up_gun():
+	player.carried_item = Gun.instance()
+
+func _picked_up_axe():
+	player.carried_item = Axe.instance()
+
+func _picked_up_key():
+	player.carried_item = KeyFob.instance()
 
 var player: PlayerState
 
@@ -35,15 +40,11 @@ func _exit_tree():
 func _on_player_interaction(target):
 	# instance dialogue and link with player and target
 	var dialogue = _dialogue_scene.instance()
-	dialogue.connect("pickup_item", self, "_do_item_pickup")
 	dialogue.connect("drop_item", self, "_on_drop_item")
 	dialogue.connect("dialogue_complete", self, "_on_dialogue_complete")
 	add_child(dialogue)
 	$Dialogue.start(target, player)
 
-func _do_item_pickup(item):
-	emit_signal("pickup_item", item.id)
-	item.queue_free()
 
 func _on_drop_item(item):
 	item.connect("item_picked_up", player, "on_item_picked_up")

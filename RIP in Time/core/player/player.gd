@@ -5,11 +5,13 @@ class_name PlayerState
 var state: State
 var state_factory: PlayerStates
 
+const Axe = preload("res://core/item/axe/axe.tscn")
+
 var velocity = Vector2()
 var direction = State.RIGHT
 var _doodads_overlapping := []
 var _items_overlapping := []
-var carried_item = null
+var carried_item = Axe.instance()
 
 signal interact_with(target)
 signal drop_item(item)

@@ -3,7 +3,6 @@ extends Node
 class_name Dialogue
 
 signal drop_item(item)
-signal pickup_item(item)
 signal dialogue_complete()
 
 const MenuEntry = preload("res://core/dialogue/menu_entry.tscn")

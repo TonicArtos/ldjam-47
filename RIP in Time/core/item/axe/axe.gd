@@ -1,9 +1,12 @@
 extends Area2D
 
-const FLOOR_POSITION = 442
+const FLOOR_POSITION = 428
 
 func is_item():
 	pass
+
+func get_item_type():
+	return "axe"
 
 var dialogues = {
 	0 : Story.Message.new(
@@ -15,7 +18,7 @@ var dialogues = {
 	),
 	1 : Story.Message.new("pick up axe", [Story.default_done()]),
 	2 : Story.Message.new("already carrying item", [Story.default_done()]),
-	90 : Story.Message.new("carrying axe", [Story.Option.new(99, "drop"), Story.default_drop(), Story.default_done()]),
+	90 : Story.Message.new("carrying axe", [Story.default_drop(), Story.default_done()]),
 }
 
 func get_dialogue(id: int, item):
