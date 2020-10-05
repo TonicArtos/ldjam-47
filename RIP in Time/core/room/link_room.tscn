@@ -24,17 +24,19 @@ __meta__ = {
 
 [node name="BridgeDoor" parent="." instance=ExtResource( 2 )]
 position = Vector2( 104, 380 )
+is_unlocked = false
 is_axe_door = true
+is_cabin_door = false
 destination_room = "BridgeRoom"
 from_room = "LinkRoom"
-sprite_suffix = "link"
 
 [node name="RipDoor" parent="." instance=ExtResource( 2 )]
 position = Vector2( 860, 380 )
 is_unlocked = true
+is_axe_door = false
+is_cabin_door = false
 destination_room = "RipDriveRoom"
 from_room = "LinkRoom"
-sprite_suffix = "link"
 
 [node name="Room" type="Sprite" parent="."]
 position = Vector2( 480, 292 )
@@ -42,25 +44,29 @@ texture = ExtResource( 1 )
 
 [node name="ReactorDoor" parent="." instance=ExtResource( 3 )]
 position = Vector2( 232, 372 )
-is_axe_door = true
-destination_room = "ReactorRoom"
-from_room = "LinkRoom"
-sprite_suffix = "link"
 
 [node name="Axe" parent="." instance=ExtResource( 5 )]
 position = Vector2( 748, 396 )
 
 [node name="Capsule1" parent="." instance=ExtResource( 6 )]
 position = Vector2( 368, 348 )
+human_name = "jonie hoff"
+journal_entry = "jonie hoff journal"
 
 [node name="Capsule2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 464, 348 )
+human_name = "whetu ng"
+journal_entry = "whetu ng journal"
 
 [node name="Capsule3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 560, 348 )
+human_name = "steve lowry"
+journal_entry = "steve lowry journal"
 
 [node name="Capsule4" parent="." instance=ExtResource( 6 )]
 position = Vector2( 656, 348 )
+human_name = "anfelice gray"
+journal_entry = "anfelice gray journal"
 
 [node name="Boundary" type="StaticBody2D" parent="."]
 

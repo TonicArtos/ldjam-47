@@ -41,45 +41,58 @@ const text = {
 	
 	"already carrying item": "You are already carrying an item",
 	
-	"pod 1": """ANFELICE GRAY""",
+	"anfelice gray": """ANFELICE GRAY""",
 	
-	"anfelice gray journal": """
-	Date: 14:14:59 17 September 3030 EET
+	"anfelice gray journal": """Date: 14:14:59 17 September 3030 EET
 
-	Last time we went to sleep, I had the worst nightmare. A tiny black hole blasted through the ship and sucked us in one by one. Even though we’re meant to be near-dead in the cryo-pods, I felt the terror in my bones. It made me dread this sleep. I hope we don’t have to do many more jumps after this, because I don’t think I can take it.""",
+	Last time we went to sleep, I had the worst nightmare. A tiny black hole blasted through the ship and sucked us in one by one. Even though we're meant to be near-dead in the cryo-pods, I felt the terror in my bones. It made me dread this sleep. I hope we don't have to do many more jumps after this, because I don't think I can take it.""",
+	
+	"anfelice gray waking": """Waking routine activated.""",
+	
+	"start wake cycle": """The pod changes from cooling mode to thawing mode and the EEG monitor starts to beep as the human's wetware begins to reactivate. This will take some time.""",
 
-	"whetu ng journal": """WHETU NG
-	JOURNAL ENTRY
-	Date: 13:58:32 17 September 3030 EET
+	"whetu ng": """WHETU NG""",
 
-	REMINDER FOR WHEN YOU’RE AWAKE! Steve owes you 20 ripcoins. Don’t let him scam you this time.""",
+	"whetu ng journal": """Date: 13:58:32 17 September 3030 EET
+	
+	REMINDER FOR WHEN YOU’RE AWAKE! Steve owes you 20 ripcoins. Don't let him scam you this time.""",
+	
+	"whetu ng waking":  """Waking routine activated.""",
+	
+	"steve lowry": """STEVE LOWRY""",
 
-	"steve lowry journal": """STEVE LOWRY
-	JOURNAL ENTRY
-	Date: 18:06:56 17 September 3030 EET
+	"steve lowry journal": """Date: 18:06:56 17 September 3030 EET
 
-	Robbie’s getting smarter. The other day, I told her that the eliminator in cubicle 6 was busted. When she went to inspect it, I put a cucumber behind her so she’d see it and freak out when she turned around. I thought she was just checking out the plumbing, so I waited a bit, but then she asked me to get her a plunger. I turned around and tripped right over her damn arm! I don’t know how she got it there without me noticing, but boy did it hurt when I hit the floor. We should turn the gravity down in this place.""",
+	Robbie's getting smarter. The other day, I told her that the eliminator in cubicle 6 was busted. When she went to inspect it, I put a cucumber behind her so she'd see it and freak out when she turned around. I thought she was just checking out the plumbing, so I waited a bit, but then she asked me to get her a plunger. I turned around and tripped right over her damn arm! I don't know how she got it there without me noticing, but boy did it hurt when I hit the floor. We should turn the gravity down in this place.""",
+	
+	"steve lowry waking": """Waking routine activated.""",
+	
+	"jonie hoff": """JONIE HOFF""",
 
-	"jonie hoff journal": """JONIE HOFF
-	JOURNAL ENTRY
-	Date: 11:12:13 17 September 3030 EET
+	"jonie hoff journal": """Date: 11:12:13 17 September 3030 EET
 
-	I’m tired of the finance industry. We’re out here doing the hard labour while the fat cats are windsurfing on Europa or whatever it is they do all day. When my tour is over, my friends will all be retired and kicking back with their grandkids, and I’m going to be in my thirties. Don’t even get me started on the nightmares….""",
+	I'm tired of the finance industry. We're out here doing the hard labour while the fat cats are windsurfing on Europa or whatever it is they do all day. When my tour is over, my friends will all be retired and kicking back with their grandkids, and I'm going to be in my thirties. Don't even get me started on the nightmares...""",
+	
+	"jonie hoff waking": """Waking routine activated.""",
+	
+	"reddy koppel": """REDDY KOPPEL""",
 
-	"reddy koppel journal": """REDDY KOPPEL
-	JOURNAL ENTRY
-	Date: 17:10:43 17 September 3030 EET
+	"reddy koppel journal": """Date: 17:10:43 17 September 3030 EET
 
 	Things to do after the RIP jump:
 	- Book hotel on Luna for shore leave ASAP. Do not forget!!!
 	- Make appointment with psych. Bad dreams probably about the divorce.
 	- Clean the fridge.""",
+	
+	"reddy koppel waking": """Waking routine activated.""",
+	
+	"alisha doil": """ALISHA DOIL""",
 
-	"alisha doil journal": """ALISHA DOIL
-	JOURNAL ENTRY
-	Date: 15:01:44 17 September 3030 EET
+	"alisha doil journal": """Date: 15:01:44 17 September 3030 EET
 
-	I’ve been thinking about it, and there’s probably a more efficient way to mine ripcoins if the RIP drive is close to a binary black hole system, especially if the black holes have a rapid orbit around one another. Gravitational forces might be a problem. Will look into this later.""",
+	I've been thinking about it, and there's probably a more efficient way to mine ripcoins if the RIP drive is close to a binary black hole system, especially if the black holes have a rapid orbit around one another. Gravitational forces might be a problem. Will look into this later.""",
+	
+	"alisha doil waking": """Waking routine activated.""",
 
 	"battery door status": """EMERGENCY LOCK ACTIVATED
 	CONDITION 8: SUDDEN LOSS OF CABIN PRESSURE""",
@@ -134,7 +147,7 @@ const text = {
 	
 	"look at axe": """There is a fire axe on the ground.""",
 	
-	"pick up axe": """	Wallmutt Fire Axe - Real™ oak handle
+	"pick up axe": """Wallmutt Fire Axe - Real™ oak handle
 	Caution: flammable""",
 
 	"nav computer message": """“Hi there! Tell me where you want to go!”""",
@@ -218,29 +231,29 @@ RIQ\"sequeoce loaded. Oinfirm""",
 	-- error --
 	-- error --""",
 	
-	"anfelice gray good end": """“Gosh, that was awful. I’m going to apply for a transfer. NO space travel and NO cryo-sleep, thank you very much!”""",
+	"anfelice gray good end": """“Gosh, that was awful. I'm going to apply for a transfer. NO space travel and NO cryo-sleep, thank you very much!”""",
 	
-	"anfelice gray bad end": """“There’s nothing. There’s nothing. There’s nothing.”""",
+	"anfelice gray bad end": """“There's nothing. There's nothing. There's nothing.”""",
 	
-	"whetu ng good end": """“Steve, you better give me those 20 ripcoins, or I’m flushing your bottle cap collection out of the airlock!”""",
+	"whetu ng good end": """“Steve, you better give me those 20 ripcoins, or I'm flushing your bottle cap collection out of the airlock!”""",
 	
-	"whetu ng bad end": """“My name? I can’t remember.”""",
+	"whetu ng bad end": """“My name? I can't remember.”""",
 	
-	"steve lowry good end": """“I told Whetu that I was investing his money. I can’t just uninvest it! Anyway, he now owns 1/32 of an ice farm in the belt. When the ice matures, we’ll harvest and sell it off. I don’t know why he’s so upset. This is nothing like my vacuum bottling business.”""",
+	"steve lowry good end": """“I told Whetu that I was investing his money. I can't just uninvest it! Anyway, he now owns 1/32 of an ice farm in the belt. When the ice matures, we'll harvest and sell it off. I don't know why he's so upset. This is nothing like my vacuum bottling business.”""",
 
-	"steve lowry bad end": """“The cucumber-- It’s after us!”""",
+	"steve lowry bad end": """“The cucumber-- It's after us!”""",
 	
-	"jonie hoff good end": """“Forget what I said about quitting finance. The latest ripcoin haul was MASSIVE. I’m buying a yacht and one of those cute robotic poodles with Daisy’s memories built into it. Then I’m going into solo consulting. Five year plan, here I come!”""",
+	"jonie hoff good end": """“Forget what I said about quitting finance. The latest ripcoin haul was MASSIVE. I'm buying a yacht and one of those cute robotic poodles with Daisy's memories built into it. Then I'm going into solo consulting. Five year plan, here I come!”""",
 
 	"jonie off bad end": """“Have you seen the endless black abyss?”""",
 	
-	"reddy koppel good end": """“If we stop for maintenance now, that’s two RIP jumps lost. NO ONE is going to be happy about that, not the higher ups and not the crew. It’s been okay so far, so the ship will hang on a little longer.”""",
+	"reddy koppel good end": """“If we stop for maintenance now, that’s two RIP jumps lost. NO ONE is going to be happy about that, not the higher ups and not the crew. It's been okay so far, so the ship will hang on a little longer.”""",
 	
 	"reddy kopel bad end": """“Alone in space, alone in space.”""",
 	
-	"alishia doil good end": """“There’s something wrong. Too many people are having strange experiences while in cryo. Maybe the chambers are malfunctioning? I guess the medic techs will handle it. I need to get back to working on the black hole idea.”""",
+	"alishia doil good end": """“There's something wrong. Too many people are having strange experiences while in cryo. Maybe the chambers are malfunctioning? I guess the medic techs will handle it. I need to get back to working on the black hole idea.”""",
 
-	"alisha doil bad end": "“Don’t bother me. The void calls.”",
+	"alisha doil bad end": "“Don't bother me. The void calls.”",
 	
 	##################################################
 	
